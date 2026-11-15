@@ -129,6 +129,7 @@ def main():
                     f"Period the claim refers to: {r['period']}\n\n" + "\n\n".join(parts))[:24000]
             res["second"] = ask(user)
         results.append(res); print(res["id"], res["first_verdict"], "| numbers in source:", res["all_numbers_in_source"], "| second:", res.get("second", {}).get("verdict"), flush=True)
+    os.makedirs("check", exist_ok=True)
     json.dump({"model": MODEL if KEY else None, "rows": results}, open("check/second_check.json", "w"), indent=1)
 
 if __name__ == "__main__":
