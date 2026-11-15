@@ -149,7 +149,7 @@
      "url": "https://breezynewsnigeria.com/?p=130597",
      "ok": true,
      "kind": "html",
-     "chars": 3867
+     "chars": 3777
     }
    ],
    "official_numbers": {
@@ -167,7 +167,7 @@
      "url": "https://breezynewsnigeria.com/?p=130597",
      "ok": true,
      "kind": "html",
-     "chars": 3867
+     "chars": 3777
     }
    ],
    "official_numbers": {
@@ -185,7 +185,7 @@
      "url": "https://breezynewsnigeria.com/?p=130597",
      "ok": true,
      "kind": "html",
-     "chars": 3867
+     "chars": 3777
     }
    ],
    "official_numbers": {
@@ -203,7 +203,7 @@
      "url": "https://breezynewsnigeria.com/?p=130597",
      "ok": true,
      "kind": "html",
-     "chars": 3867
+     "chars": 3777
     }
    ],
    "official_numbers": {
@@ -222,13 +222,19 @@
      "ok": false,
      "kind": "HTTPError: HTTP Error 403: Forbidden",
      "chars": 0
+    },
+    {
+     "url": "https://www.agusto.com/?p=10930",
+     "ok": true,
+     "kind": "html",
+     "chars": 14846
     }
    ],
    "official_numbers": {
-    "13.5": false
+    "13.5": true
    },
-   "all_numbers_in_source": false,
-   "any_source_ok": false
+   "all_numbers_in_source": true,
+   "any_source_ok": true
   },
   {
    "id": "T25-13",
@@ -295,13 +301,19 @@
      "ok": false,
      "kind": "HTTPError: HTTP Error 403: Forbidden",
      "chars": 0
+    },
+    {
+     "url": "https://www.thecable.ng/breaking-nigerias-inflation-rate-rises-to-24-2",
+     "ok": true,
+     "kind": "html",
+     "chars": 4461
     }
    ],
    "official_numbers": {
-    "24.23": false
+    "24.23": true
    },
-   "all_numbers_in_source": false,
-   "any_source_ok": false
+   "all_numbers_in_source": true,
+   "any_source_ok": true
   },
   {
    "id": "TB-04",
@@ -330,7 +342,7 @@
      "url": "https://allafrica.com/stories/202511200364.html",
      "ok": true,
      "kind": "html",
-     "chars": 10577
+     "chars": 10576
     }
    ],
    "official_numbers": {
@@ -348,7 +360,7 @@
      "url": "https://breezynewsnigeria.com/?p=130597",
      "ok": true,
      "kind": "html",
-     "chars": 3867
+     "chars": 3777
     }
    ],
    "official_numbers": {
@@ -464,11 +476,19 @@
      "ok": false,
      "kind": "URLError: <urlopen error timed out>",
      "chars": 0
+    },
+    {
+     "url": "https://nairametrics.com/2026/01/19/nigerias-non-oil-exports-hit-6-1-billion-in-2025-nepc",
+     "ok": true,
+     "kind": "html",
+     "chars": 4337
     }
    ],
-   "official_numbers": {},
-   "all_numbers_in_source": false,
-   "any_source_ok": false
+   "official_numbers": {
+    "6.1": true
+   },
+   "all_numbers_in_source": true,
+   "any_source_ok": true
   },
   {
    "id": "A26-01",
