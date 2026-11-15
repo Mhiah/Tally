@@ -55,11 +55,12 @@ def fetch(url):
     return re.sub(r"\n{2,}", "\n", t).strip(), "html"
 
 def numbers(s):
-    """Numbers with at least three significant characters, e.g. 4.23, 52.60, 1,183,691, 510,378."""
+    """Numbers with at least three digits, or two digits and a decimal point, e.g. 4.23, 6.1, 1,183,691. Years are skipped."""
     out = []
     for n in re.findall(r"\d[\d,]*\.?\d*", s):
         n = n.rstrip(".,")
-        if len(n.replace(",", "").replace(".", "")) >= 3 and not re.fullmatch(r"20[12]\d", n): out.append(n)
+        sig = len(n.replace(",", "").replace(".", ""))
+        if (sig >= 3 or (sig == 2 and "." in n)) and not re.fullmatch(r"20[12]\d", n): out.append(n)
     return list(dict.fromkeys(out))
 
 def present(n, text):
