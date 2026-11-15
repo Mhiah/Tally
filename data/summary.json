@@ -1,32 +1,32 @@
 {
- "figures_listed": 51,
+ "figures_listed": 59,
  "verdicts": {
-  "match": 20,
+  "match": 22,
   "mismatch": 4,
-  "close": 5,
+  "close": 4,
   "unverifiable": 1,
   "forecast": 1,
-  "not checked": 20
+  "not checked": 27
  },
- "scored": 29,
+ "scored": 30,
  "scored_share": {
-  "match": 69.0,
-  "close": 17.2,
-  "mismatch": 13.8
+  "match": 73.3,
+  "close": 13.3,
+  "mismatch": 13.3
  },
  "by_speaker": {
   "Atiku Abubakar": {
    "match": 3,
    "close": 2,
-   "not checked": 5
+   "not checked": 6
   },
   "Bola Tinubu": {
-   "match": 17,
+   "match": 19,
    "mismatch": 4,
-   "close": 3,
+   "close": 2,
    "unverifiable": 1,
    "forecast": 1,
-   "not checked": 15
+   "not checked": 21
   }
  },
  "by_speech": {
@@ -35,11 +35,10 @@
    "mismatch": 2,
    "close": 2,
    "unverifiable": 1,
-   "not checked": 10
+   "not checked": 16
   },
   "Bola Tinubu | 2026 budget speech | 2025-12-19": {
-   "match": 4,
-   "close": 1,
+   "match": 6,
    "mismatch": 1,
    "not checked": 4
   },
@@ -55,7 +54,7 @@
   "Atiku Abubakar | Independence Day address | 2026-10-01": {
    "match": 3,
    "close": 2,
-   "not checked": 5
+   "not checked": 6
   }
  },
  "error_types": {
@@ -63,27 +62,25 @@
   "baseline period": 1,
   "rounding or transcription": 1,
   "baseline understated": 2,
-  "rounding": 1,
   "stale figure": 2,
-  "stale or rounded": 1
+  "official month not located": 1
  },
  "direction_of_errors": {
-  "favourable": 5,
-  "unfavourable": 4
+  "favourable": 4,
+  "unfavourable": 3
  },
  "direction_by_speaker": {
   "Atiku Abubakar": {
-   "unfavourable": 1,
    "favourable": 1
   },
   "Bola Tinubu": {
-   "favourable": 4,
+   "favourable": 3,
    "unfavourable": 3
   }
  },
  "source_types_for_scored": {
   "press report of official release": 25,
-  "government statement only": 1,
+  "independent secondary source": 2,
   "primary document": 3
  }
 }

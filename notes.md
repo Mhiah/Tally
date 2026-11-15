@@ -42,3 +42,10 @@ Frame: 5 scripted national addresses, Oct 2025 - Oct 2026. T25=Tinubu Independen
 - T25 "tax-to-GDP ratio has risen to 13.5 per cent from less than 10 per cent": 13.5% MATCH with FIRS chairman's statement (arise.tv firs-raises-tax-to-gdp-ratio-to-13-5); baseline CLOSE: FIRS reported 10.86% for 2022 (investorsking tag page; premiumtimes ?p=820013 "roughly 10.8 per cent").
 - T25 "debt service-to-revenue ratio ... from 97% to below 50%": UNVERIFIABLE here: only government statements found (thecable tinubu-tax-to-gdp...; FIRS chair "cut to 50%"), no independent release located. In Nov 2024 the President had said 65%.
 - A26 "Today, a N70,000 minimum wage buys just 50 litres": CLOSE. Implies N1,400/litre. Latest NBS figure found: N1,596.25 in May 2026 (premiumtimes 890568) = 43.9 litres. Months after May 2026 not checked.
+
+## Audit pass (15 Nov, evening)
+- Re-read all five speeches with a fresh extraction. Added 8 missed figures (T25-U19..U24, TB-07, A26-U20).
+- TB-04 "about $47bn" vs $46.7bn: close -> match (hedged, rounds correctly).
+- A26-03 petrol: Nairametrics reports Lagos/Abuja pump prices N1,400-1,450 in Sept 2026, i.e. 48-50 litres. Kept close, direction removed. Official Sept average not found.
+- T25-12/13 tax-to-GDP: 13.5% is the 2024 figure on pre-rebasing GDP (Africa Check factsheet; Agusto). Baseline 10.86% is the revised end-2021 estimate (Agusto), not 2022 as first recorded. President said "from 10%" on 1 June 2025.
+- NBS April 2023 petrol document opened directly: N254.06 confirmed.
