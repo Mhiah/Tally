@@ -74,6 +74,7 @@ Then the work was checked three times, and the report says what each pass change
 - **Audit pass.** Each speech was read again from scratch. Eight missed figures were added. One verdict was changed from close to match, and one lost its direction label.
 - **Verification pass.** The source link on every scored row was opened again and the figure read a second time. All 30 existing verdicts held. Eight rows had the recorded figure or the link corrected. One unchecked figure was confirmed and added.
 - **Claims pass.** Statements in the report that the evidence did not support were cut or toned down.
+- **Mechanical check, no AI.** `second_check.py` runs on a clean GitHub machine, downloads every source and tests by plain text matching whether the recorded official numbers are on the page. All 31 scored rows had a source that opened. In 26 every number was found. In the other 5 the quoted numbers were found and the missing item was the checker's own arithmetic, a number written in another form, or a non-numeric figure. Output: `check/second_check.json`.
 
 ## Check it yourself in two minutes
 
@@ -103,6 +104,8 @@ Python 3 only. It prints the counts and rewrites `data/summary.json`. `python3 f
 | `analyze.py` | Computes the counts from the dataset |
 | `figure.py` | Draws the chart from the dataset |
 | `notes.md` | The checking log, including what each pass changed |
+| `second_check.py` | The independent check: source download, number matching, and an optional blind second coder |
+| `check/second_check.json` | Its output |
 | `report/Tally-report.pdf` | The report |
 | `report/report.tex` | Report source |
 | `JUDGES.md` | Where to look, claim by claim, and the weakest points |

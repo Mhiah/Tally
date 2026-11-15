@@ -77,6 +77,10 @@ Finally, the source link on every scored row was opened again and the figure rea
 
 All extraction and checking was done by an AI assistant (Claude, Anthropic) using web search, directed by the author. There was no second checker. Three figures were verified against the primary document. Of the other 28 scored figures, 26 were verified through press reports that quote the official release and two through independent secondary sources, with the source linked on the row. Section~\ref{sec:limits} sets out what this means for reliability.
 
+\subsection{An independent mechanical check}
+
+To test the dataset without relying on the checker's own reading, a script (\texttt{second\_check.py}) was run on a clean machine through GitHub Actions. For each of the 31 scored rows it downloads the linked sources and tests, by plain text matching with no AI involved, whether the numbers recorded as the official figure appear in the page. All 31 rows had at least one source that opened. In 26 rows every recorded number was found. In the other five the decisive quoted numbers were found and the missing item was either a number the checker derived by arithmetic (three rows), a figure the source writes in a different form (``1.427 million'' for 1,427,616), or a row whose official figure is not a number (``eighth consecutive fall''). This shows that the official figures in the dataset are really in the sources cited. It does not test whether each verdict is the right reading of them. The output is \texttt{check/second\_check.json}.
+
 \section{Results}
 
 \subsection{Most checked figures matched}
@@ -164,7 +168,7 @@ Across five Nigerian national addresses, 31 figures were scored against official
 \begin{itemize}
 \item \textbf{Small and incomplete.} Five speeches, 59 figures, 31 scored. Twenty-six listed figures were not checked, and the first extraction pass missed eight figures, so others may still be missing.
 \item \textbf{Checked figures were not chosen at random.} Prominent figures were checked first. The 74\% match rate applies to the checked set only.
-\item \textbf{A single AI checker.} One AI assistant did the extraction and checking, with no second checker and no human verification of each row. The audit and verification passes were done by the same assistant, so they catch slips but are not independent replication. Errors in the dataset are possible. Every scored row carries a link so that the verdict can be audited.
+\item \textbf{A single AI checker.} One AI assistant did the extraction and checking, with no second checker and no human verification of each row. The audit and verification passes were done by the same assistant, so they catch slips but are not independent replication. The mechanical check is independent of the assistant but only confirms that the recorded numbers are in the sources. Errors in the dataset are possible. Every scored row carries a link so that the verdict can be audited.
 \item \textbf{Mostly secondary sources.} Only 3 of the 31 scored figures were verified against the primary document. The rest rely on press reports quoting the official release or, in two cases, on independent secondary sources. A few links are to later reports that restate an earlier figure. Where several outlets reported the same figure this is low-risk, but it is not the same as reading the release.
 \item \textbf{Extraction relied on published transcripts,} which may differ from the speech as delivered, and was done with a tool that truncates long quotations, so claim wording in the dataset is sometimes an excerpt.
 \item \textbf{Verdict thresholds are judgement calls.} ``Close'' and ``mismatch'' are separated by a rough ten to fifteen per cent rule, and the direction labels reflect the checker's reading of each speaker's argument.
