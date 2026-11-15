@@ -1,0 +1,32 @@
+name: Second check
+# Re-checks every scored row from a clean machine. Starts when the SECOND_CHECK file changes, or by hand.
+# Without the SERV_API_KEY secret only the mechanical (no AI) check runs.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [SECOND_CHECK]
+permissions:
+  contents: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pdfplumber
+      - run: python3 second_check.py
+        env:
+          SERV_API_KEY: ${{ secrets.SERV_API_KEY }}
+      - name: Save results to the repo
+        if: always()
+        run: |
+          git config user.name "Mhiah"
+          git config user.email "192190660+Mhiah@users.noreply.github.com"
+          git add check
+          git diff --cached --quiet || git commit -m "check: second check results [skip ci]"
+          git pull --rebase
+          git push
