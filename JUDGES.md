@@ -2,7 +2,7 @@
 
 ## One-minute summary
 
-Tally lists every figure in five Nigerian national addresses (four by the President, one by the main opposition candidate) and checks each against the official release. 59 figures listed, 32 checked, 30 scored: 22 match, 4 close, 4 mismatch. The output is an open dataset with a source link on every scored row.
+Tally lists every figure in five Nigerian national addresses (four by the President, one by the main opposition candidate) and checks each against the official release. 59 figures listed, 33 checked, 31 scored: 23 match, 4 close, 4 mismatch. The output is an open dataset with a source link on every scored row.
 
 Track 4. The sprint brief suggests pairing quantitative claims with the statistical releases they cite, flagging mismatches with links, and publishing an auditable dataset. This is that, for a country current resources do not cover.
 
@@ -27,7 +27,7 @@ Track 4. The sprint brief suggests pairing quantitative claims with the statisti
 | Debt service ratio cannot be verified | `T25-14` |
 | Opposition petrol claim: official month not found, pump prices agree | `A26-03` |
 | Tax-to-GDP figure predates the GDP rebasing | `T25-12`, `T25-13` |
-| 22 match, 4 close, 4 mismatch | `verdicts` in `data/summary.json` |
+| 23 match, 4 close, 4 mismatch | `verdicts` in `data/summary.json` |
 | Four errors favourable, three unfavourable | `direction_of_errors` in `data/summary.json` |
 
 Each row has a `source_url`. Open it and compare.
@@ -36,18 +36,20 @@ Each row has a `source_url`. Open it and compare.
 
 **Impact and innovation.** A reusable ground-truth set for claim verification in a low-resource statistical setting, sampled by listing the figures in a fixed set of speeches, so the denominator is visible. Beyond the tally: the types of error, and two cases (conflicting official sources, no release at all) break a simple match or mismatch scheme.
 
-**Execution quality.** Speeches were fixed before checking. Government and opposition went through one procedure. Unchecked figures are listed, not dropped. Every count comes from one script over one file. After the first pass the whole thing was audited: each speech was re-read, which added eight missed figures, and two verdicts were revised. The report says what changed.
+**Execution quality.** Speeches were fixed before checking. Government and opposition went through one procedure. Unchecked figures are listed, not dropped. Every count comes from one script over one file. The work was then checked three times. Each speech was re-read, which added eight missed figures and revised two verdicts. The source on every scored row was re-opened; all verdicts held and eight rows had a figure or link corrected. Unsupported statements in the report were cut. The report and `notes.md` say what changed.
 
-**Presentation and clarity.** Report is six pages, body within the limit. Limitations and dual-use appendix included.
+**Presentation and clarity.** Report is seven pages; the body ends on page six. Limitations and dual-use appendix included.
 
 ## Weakest points, stated plainly
 
-1. Small sample: 30 scored figures. Seven errors with a direction is too few to say anything about intent.
+1. Small sample: 31 scored figures. Seven errors with a direction is too few to say anything about intent.
 2. One AI checker, no second checker, no human verification of every row.
-3. 27 of 30 scored figures rest on press reports of the official release or other secondary sources, not the primary document.
+3. 28 of 31 scored figures rest on press reports of the official release or other secondary sources, not the primary document.
 4. Checked figures were prioritised by prominence, not sampled at random.
-5. The 27 unchecked rows carry no source link. The first extraction missed eight figures, so the list may still be incomplete. Two of them (`A26-06`, `A26-07`) were searched for and not found.
+5. The 26 unchecked rows carry no source link. The first extraction missed eight figures, so the list may still be incomplete. Two of them (`A26-06`, `A26-07`) were searched for and not found.
 6. Claim wording is sometimes an excerpt of the sentence, not the full sentence.
+7. Two verdicts rest on the checker's arithmetic from published figures (`T25-04`, `T26-01`). The rows say so.
+8. Two food-price rows (`A26-04`, `A26-05`) are bracketed by the months either side because the April 2023 table was not located.
 
 ## Questions you might ask
 

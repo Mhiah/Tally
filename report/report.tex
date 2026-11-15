@@ -27,7 +27,7 @@
 
 \begin{abstract}
 \noindent
-Tools that check public claims against official statistics need ground truth: claims paired with the release they cite and a verdict. The author found no open dataset of this kind for Nigeria. This project builds a first one. The figures in five scripted national addresses from October 2025 to October 2026 were listed: four by President Bola Tinubu and one by opposition candidate Atiku Abubakar. That gave 59 figures. Thirty-two were checked against releases from the statistics bureau, the central bank, the debt office and other official bodies, and 30 could be scored. Of those, 22 matched the official figure (73\%), 4 were close (13\%) and 4 did not match (13\%). The errors ran in both directions: of seven with a clear direction, four favoured the speaker's argument and three cut against it, although the favourable ones were the larger. A definition was swapped (``non-oil'' exports of 48\% that are mostly petroleum products and gas; exports outside oil and gas were about 13\%). Figures were stale (a stock-market gain quoted from ten days earlier). A baseline month was misattributed. One claim matched one official source while a second official source gave less than half the amount. One could not be checked because only the government's own statement exists. The dataset, with a source link on every scored row, is public. It is small, was checked by an AI assistant without a second checker, and relies mostly on press reports of official releases.
+Tools that check public claims against official statistics need ground truth: claims paired with the release they cite and a verdict. The author found no open dataset of this kind for Nigeria. This project builds a first one. The figures in five scripted national addresses from October 2025 to October 2026 were listed: four by President Bola Tinubu and one by opposition candidate Atiku Abubakar. That gave 59 figures. Thirty-three were checked against releases from the statistics bureau, the central bank, the debt office and other official bodies, and 31 could be scored. Of those, 23 matched the official figure (74\%), 4 were close (13\%) and 4 did not match (13\%). The errors ran in both directions: of seven with a clear direction, four favoured the speaker's argument and three cut against it, although the favourable ones were the larger. A definition was swapped (``non-oil'' exports of 48\% that are mostly petroleum products and gas; exports outside oil and gas were 13.4\%). Figures were stale (a stock-market gain quoted from ten days earlier). A baseline month was misattributed. One claim matched one official source while a second official source gave less than half the amount. One could not be checked because only the government's own statement exists. The dataset, with a source link on every scored row, is public. It is small, was checked by an AI assistant without a second checker, and relies mostly on press reports of official releases.
 \end{abstract}
 
 \section{Introduction}
@@ -36,7 +36,7 @@ A large share of political argument is carried by numbers: growth, inflation, re
 
 This matters for AI. Systems that verify claims, and the benchmarks that test them, are built mostly on material from a few countries with accessible statistics and established fact-checking outlets. A model evaluated only there tells us little about how it will do where official figures are published as PDFs, where two agencies report different numbers for the same quantity, and where a claim may rest on a government statement with no release behind it. The sprint brief asks for exactly this: pair quantitative claims with the statistical releases they cite, flag mismatches with links, and publish an auditable dataset.
 
-This project does that for Nigeria, at small scale. Its contributions are: (i) an open dataset of 59 figures from five national addresses, 30 of them scored against official releases with a link on each; (ii) a typology of how the figures went wrong, drawn from the data; (iii) an observation, on a very small number of errors, that they ran in both directions; and (iv) two cases that a simple match/mismatch scheme cannot represent, which any automated checker will need to handle.
+This project does that for Nigeria, at small scale. Its contributions are: (i) an open dataset of 59 figures from five national addresses, 31 of them scored against official releases with a link on each; (ii) a typology of how the figures went wrong, drawn from the data; (iii) an observation, on a very small number of errors, that they ran in both directions; and (iv) two cases that a simple match/mismatch scheme cannot represent, which any automated checker will need to handle.
 
 \section{Related Work}
 
@@ -69,11 +69,13 @@ For each figure the checker looked for the official release it refers to: the Na
 
 Each error was also given a type, and a direction: \emph{favourable} if the error strengthens the speaker's argument and \emph{unfavourable} if it weakens it.
 
-Thirty-two figures were checked. Checking was prioritised by prominence (headline growth, inflation, reserves, trade and debt first), not sampled at random, so the match rate describes the checked figures and should not be read as the rate for all 59. The audit pass also revised two verdicts: a reserves figure stated as ``about US\$47 billion'' against an official \$46.7 billion was moved from close to match, and a petrol-price claim lost its direction label once pump prices from the month of the speech were found (Section~\ref{sec:both}).
+Thirty-three figures were checked. Checking was prioritised by prominence (headline growth, inflation, reserves, trade and debt first), not sampled at random, so the match rate describes the checked figures and should not be read as the rate for all 59. The audit pass also revised two verdicts: a reserves figure stated as ``about US\$47 billion'' against an official \$46.7 billion was moved from close to match, and a petrol-price claim lost its direction label once pump prices from the month of the speech were found (Section~\ref{sec:both}).
+
+Finally, the source link on every scored row was opened again and the figure read a second time. All 30 existing verdicts held. The pass corrected the recorded figure or the link on eight rows, confirmed one previously unchecked figure (a 173\% rise in manufactured exports, now the 31st scored row), and removed two details from row notes that could not be found again. Two scored rows rest on the checker's own arithmetic from published figures, not on a quoted official number: the 44.3\% rise in the trade surplus, and growth of ``over 4 per cent'' in 2026, where the two quarterly rates are official but their average is not. The log of this pass is in \texttt{notes.md}.
 
 \subsection{Who did the checking}
 
-All extraction and checking was done by an AI assistant (Claude, Anthropic) using web search, directed by the author. There was no second checker. Three figures were verified against the primary document. Of the other 27 scored figures, 25 were verified through press reports that quote the official release and two through independent secondary sources, with the source linked on the row. Section~\ref{sec:limits} sets out what this means for reliability.
+All extraction and checking was done by an AI assistant (Claude, Anthropic) using web search, directed by the author. There was no second checker. Three figures were verified against the primary document. Of the other 28 scored figures, 26 were verified through press reports that quote the official release and two through independent secondary sources, with the source linked on the row. Section~\ref{sec:limits} sets out what this means for reliability.
 
 \section{Results}
 
@@ -82,11 +84,11 @@ All extraction and checking was done by an AI assistant (Claude, Anthropic) usin
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.9\linewidth]{figure1.pdf}
-\caption{Verdicts on the 30 scored figures, by speech.}
+\caption{Verdicts on the 31 scored figures, by speech.}
 \label{fig:verdicts}
 \end{figure}
 
-Of the 32 figures checked, 30 could be scored: 22 matched (73\%), 4 were close (13\%) and 4 did not match (13\%). One was unverifiable and one was a forecast (Table~\ref{tab:verdicts}). Headline macroeconomic figures were reliable: every specific quarterly GDP growth rate and monthly inflation rate quoted in the five speeches matched the statistics bureau's release exactly.
+Of the 33 figures checked, 31 could be scored: 23 matched (74\%), 4 were close (13\%) and 4 did not match (13\%). One was unverifiable and one was a forecast (Table~\ref{tab:verdicts}). Headline macroeconomic figures were reliable: every specific quarterly GDP growth rate and monthly inflation rate quoted in the five speeches matched the statistics bureau's release exactly.
 
 \begin{table}[h]
 \centering
@@ -96,10 +98,10 @@ Of the 32 figures checked, 30 could be scored: 22 matched (73\%), 4 were close (
 \toprule
  & Listed & Match & Close & Mismatch & Unverif. & Forecast & Unchecked \\
 \midrule
-President Tinubu (4 addresses) & 48 & 19 & 2 & 4 & 1 & 1 & 21 \\
+President Tinubu (4 addresses) & 48 & 20 & 2 & 4 & 1 & 1 & 20 \\
 Atiku Abubakar (1 address) & 11 & 3 & 2 & 0 & 0 & 0 & 6 \\
 \midrule
-Total & 59 & 22 & 4 & 4 & 1 & 1 & 27 \\
+Total & 59 & 23 & 4 & 4 & 1 & 1 & 26 \\
 \bottomrule
 \end{tabular}
 \caption{All 59 listed figures by verdict.}
@@ -112,9 +114,9 @@ The two speakers cannot be compared from these counts. They gave different numbe
 
 The four mismatches and four close calls fall into the following types.
 
-\textbf{A definition was swapped.} The October 2025 broadcast said non-oil exports ``now represent 48 per cent, compared to oil exports, which account for 52 per cent''. The trade release for that quarter shows crude oil at 52.6\% of exports, but a further 34.2\% was other petroleum products and gas. Exports outside oil and gas were about 13\%. The 48\% is ``everything except crude'', presented as ``non-oil''. This is the most consequential error in the set, because the claim is about diversification away from oil.
+\textbf{A definition was swapped.} The October 2025 broadcast said non-oil exports ``now represent 48 per cent, compared to oil exports, which account for 52 per cent''. The trade release for that quarter shows crude oil at 52.60\% of exports and ``non-crude oil'' at 47.40\%. Within that, other petroleum products and gas were 34.21\% and the bureau's own ``non-oil'' category was 13.39\%. The 48\% is the non-crude share, presented as non-oil. This is the most consequential error in the set, because the claim is about diversification away from oil.
 
-\textbf{A baseline was misattributed or understated.} The same broadcast said oil output had recovered ``from barely one million [barrels a day] in May 2023''. The regulator recorded 1,183,691 barrels a day of crude in May 2023; the figure near one million (998,602) was April. The tax-to-GDP ratio was said to have risen ``from less than 10 per cent''; the revised official estimate for 2021 was 10.86\%, and the President himself had said ``from 10\%'' four months earlier. The 13.5\% end point matches the published 2024 figure, but that figure predates the July 2025 GDP rebasing, which raised measured GDP by about 34\% and so lowers the ratio; no official rebased ratio was found. The opposition address put a sliced loaf at ``about \N 500'' in April 2023; the statistics bureau's average was \N 561.21. In each case the lower starting point makes the change look larger.
+\textbf{A baseline was misattributed or understated.} The same broadcast said oil output had recovered ``from barely one million [barrels a day] in May 2023''. The regulator recorded 1,183,691 barrels a day of crude in May 2023; the figure near one million (998,602) was April. The tax-to-GDP ratio was said to have risen ``from less than 10 per cent''; the revised official estimate for 2021 was 10.86\%, and the President himself had said ``from 10\%'' four months earlier. The 13.5\% end point matches the published 2024 figure, but that figure predates the July 2025 GDP rebasing, which raised measured GDP by about 34\% and so lowers the ratio; no official rebased ratio was found. The opposition address put a sliced loaf at ``about \N 500'' in April 2023; the statistics bureau's average was \N 561.21 in March 2023 and \N 596.11 in May (the April table was not located). In each case the lower starting point makes the change look larger.
 
 \textbf{Figures were stale.} The New Year message said the stock market had gained 48.12\% in 2025. That was the year-to-date return on 22 December; the full-year return was 51.19\%. The budget speech said ``over 418,000'' students had been supported by the loan fund, although the fund had reported 510,378 beneficiaries in September and the President had cited about 510,000 eleven weeks earlier. Both errors understate the speaker's own case.
 
@@ -139,11 +141,11 @@ Seven of the eight errors have a clear direction. Four favoured the speaker's ar
 
 \textbf{What this suggests for those who write the speeches.} Two of the four mismatches would have been avoided by using the latest figure. Both understated the government's own record.
 
-\textbf{What the dataset is for.} Each row gives the claim, the speech, the official figure, the source, a verdict, an error type and a direction. That is enough to use the scored rows as a small test set for claim-verification systems in a low-resource statistical setting, and the 27 unchecked rows are open tasks. It is a starting point, and it should be extended and independently re-checked before anyone relies on it.
+\textbf{What the dataset is for.} Each row gives the claim, the speech, the official figure, the source, a verdict, an error type and a direction. That is enough to use the scored rows as a small test set for claim-verification systems in a low-resource statistical setting, and the 26 unchecked rows are open tasks. It is a starting point, and it should be extended and independently re-checked before anyone relies on it.
 
 \section{Conclusion}
 
-Across five Nigerian national addresses, 30 figures were scored against official releases. About three in four matched, and headline growth and inflation figures were quoted accurately every time. The errors that did occur were mostly stale figures, loose baselines and one swapped definition, and on the few cases available they ran in both directions, with the larger ones favouring the speaker. Two claims exposed limits in the idea of a single official number. The dataset is public, with a link on every scored row, so that each verdict can be checked.
+Across five Nigerian national addresses, 31 figures were scored against official releases. About three in four matched, and headline growth and inflation figures were quoted accurately every time. The errors that did occur were mostly stale figures, loose baselines and one swapped definition, and on the few cases available they ran in both directions, with the larger ones favouring the speaker. Two claims exposed limits in the idea of a single official number. The dataset is public, with a link on every scored row, so that each verdict can be checked.
 
 \begin{thebibliography}{9}\small
 \bibitem{vaintrob_gap} L. Vaintrob. The AI Adoption Gap. Forethought, 2025. \url{https://www.forethought.org/research/the-ai-adoption-gap}
@@ -160,10 +162,10 @@ Across five Nigerian national addresses, 30 figures were scored against official
 \subsection*{Limitations}
 
 \begin{itemize}
-\item \textbf{Small and incomplete.} Five speeches, 59 figures, 30 scored. Twenty-seven listed figures were not checked, and the first extraction pass missed eight figures, so others may still be missing.
-\item \textbf{Checked figures were not chosen at random.} Prominent figures were checked first. The 73\% match rate applies to the checked set only.
+\item \textbf{Small and incomplete.} Five speeches, 59 figures, 31 scored. Twenty-six listed figures were not checked, and the first extraction pass missed eight figures, so others may still be missing.
+\item \textbf{Checked figures were not chosen at random.} Prominent figures were checked first. The 74\% match rate applies to the checked set only.
 \item \textbf{A single AI checker.} One AI assistant did the extraction and checking, with no second checker and no human verification of each row. Errors in the dataset are possible. Every scored row carries a link so that the verdict can be audited.
-\item \textbf{Mostly secondary sources.} Only 3 of the 30 scored figures were verified against the primary document. The rest rely on press reports quoting the official release or, in two cases, on independent secondary sources. A few links are to later reports that restate an earlier figure. Where several outlets reported the same figure this is low-risk, but it is not the same as reading the release.
+\item \textbf{Mostly secondary sources.} Only 3 of the 31 scored figures were verified against the primary document. The rest rely on press reports quoting the official release or, in two cases, on independent secondary sources. A few links are to later reports that restate an earlier figure. Where several outlets reported the same figure this is low-risk, but it is not the same as reading the release.
 \item \textbf{Extraction relied on published transcripts,} which may differ from the speech as delivered, and was done with a tool that truncates long quotations, so claim wording in the dataset is sometimes an excerpt.
 \item \textbf{Verdict thresholds are judgement calls.} ``Close'' and ``mismatch'' are separated by a rough ten to fifteen per cent rule, and the direction labels reflect the checker's reading of each speaker's argument.
 \item \textbf{The speakers are not comparable.} Four speeches against one, of different kinds, with different shares checked.

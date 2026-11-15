@@ -49,3 +49,16 @@ Frame: 5 scripted national addresses, Oct 2025 - Oct 2026. T25=Tinubu Independen
 - A26-03 petrol: Nairametrics reports Lagos/Abuja pump prices N1,400-1,450 in Sept 2026, i.e. 48-50 litres. Kept close, direction removed. Official Sept average not found.
 - T25-12/13 tax-to-GDP: 13.5% is the 2024 figure on pre-rebasing GDP (Africa Check factsheet; Agusto). Baseline 10.86% is the revised end-2021 estimate (Agusto), not 2022 as first recorded. President said "from 10%" on 1 June 2025.
 - NBS April 2023 petrol document opened directly: N254.06 confirmed.
+
+## Verification pass (15 Nov, late)
+Every source link on a scored row was re-opened and the figure read again. Outcomes:
+- Confirmed as recorded: T25-01, -02, -03, -06, -07, -08, -09, -10, -11; TB-01, -02, -03, -04, -05, -06; TN-01, -03 (both series), -04; T26-02; A26-01, -02, -03.
+- T25-04: linked report gives N7.46trn but not the 44.3%. Recomputed from its Q1 exports (N20,598.48bn) and total trade (N36,024.66bn): Q1 surplus N5,172.30bn, rise about 44%.
+- T25-05: report gives non-crude 47.40% and non-oil 13.39% directly. The President's 48% is the non-crude share.
+- T25-15 (was unchecked): manufactured exports +173.0% quarter on quarter confirmed. Now a match.
+- T26-01: Q1 2026 3.89% confirmed from a separate report. Half-year 4.16% is my simple average, not an official figure.
+- TB-07: eighth consecutive fall confirmed (TheCable, Techeconomy).
+- TN-02: 48.12% on 22 Dec 2025 confirmed (Leadership); 51.19% full year, 102,926 to 155,613 (BusinessDay).
+- A26-04, A26-05: the NBS file I had linked as April 2023 shows March 2023 columns (egg 88.22, bread 561.21); the other file is May 2023 (egg 89.17, bread 596.11). April not located. Verdicts unchanged, figures corrected.
+- A26-01: original Guardian link would not open; replaced with Nairametrics report of the same DMO release.
+- Removed two details from row notes that I could not re-verify (a 3 September NELFUND figure; a second CBN reserves series).

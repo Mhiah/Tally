@@ -1,18 +1,18 @@
 {
  "figures_listed": 59,
  "verdicts": {
-  "match": 22,
+  "match": 23,
   "mismatch": 4,
   "close": 4,
   "unverifiable": 1,
   "forecast": 1,
-  "not checked": 27
+  "not checked": 26
  },
- "scored": 30,
+ "scored": 31,
  "scored_share": {
-  "match": 73.3,
-  "close": 13.3,
-  "mismatch": 13.3
+  "match": 74.2,
+  "close": 12.9,
+  "mismatch": 12.9
  },
  "by_speaker": {
   "Atiku Abubakar": {
@@ -21,21 +21,21 @@
    "not checked": 6
   },
   "Bola Tinubu": {
-   "match": 19,
+   "match": 20,
    "mismatch": 4,
    "close": 2,
    "unverifiable": 1,
    "forecast": 1,
-   "not checked": 21
+   "not checked": 20
   }
  },
  "by_speech": {
   "Bola Tinubu | Independence Day broadcast | 2025-10-01": {
-   "match": 9,
+   "match": 10,
    "mismatch": 2,
    "close": 2,
    "unverifiable": 1,
-   "not checked": 16
+   "not checked": 15
   },
   "Bola Tinubu | 2026 budget speech | 2025-12-19": {
    "match": 6,
@@ -79,7 +79,7 @@
   }
  },
  "source_types_for_scored": {
-  "press report of official release": 25,
+  "press report of official release": 26,
   "independent secondary source": 2,
   "primary document": 3
  }
