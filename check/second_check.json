@@ -1,0 +1,625 @@
+{
+ "model": null,
+ "rows": [
+  {
+   "id": "T25-01",
+   "speaker": "Bola Tinubu",
+   "first_verdict": "match",
+   "sources": [
+    {
+     "url": "https://nairametrics.com/2025/12/01/nigerias-gdp-rises-by-3-98-in-q3-2025-driven-by-strong-agricultural-and-industrial-growth/",
+     "ok": true,
+     "kind": "html",
+     "chars": 5688
+    }
+   ],
+   "official_numbers": {
+    "4.23": true
+   },
+   "all_numbers_in_source": true,
+   "any_source_ok": true
+  },
+  {
+   "id": "T25-02",
+   "speaker": "Bola Tinubu",
+   "first_verdict": "match",
+   "sources": [
+    {
+     "url": "https://von.gov.ng/?p=472191",
+     "ok": true,
+     "kind": "html",
+     "chars": 27845
+    }
+   ],
+   "official_numbers": {
+    "20.12": true
+   },
+   "all_numbers_in_source": true,
+   "any_source_ok": true
+  },
+  {
+   "id": "T25-03",
+   "speaker": "Bola Tinubu",
+   "first_verdict": "match",
+   "sources": [
+    {
+     "url": "https://nairametrics.com/2025/09/22/nigerias-fx-reserves-soar-to-42-03-billion-hitting-72-month-high",
+     "ok": true,
+     "kind": "html",
+     "chars": 5390
+    }
+   ],
+   "official_numbers": {
+    "42.03": true
+   },
+   "all_numbers_in_source": true,
+   "any_source_ok": true
+  },
+  {
+   "id": "T25-04",
+   "speaker": "Bola Tinubu",
+   "first_verdict": "match",
+   "sources": [
+    {
+     "url": "https://www.thecable.ng/nbs-nigeria-recorded-n7-4trn-trade-surplus-in-q2-2025",
+     "ok": true,
+     "kind": "html",
+     "chars": 5342
+    }
+   ],
+   "official_numbers": {
+    "7.46": true,
+    "5.17": false
+   },
+   "all_numbers_in_source": false,
+   "any_source_ok": true
+  },
+  {
+   "id": "T25-05",
+   "speaker": "Bola Tinubu",
+   "first_verdict": "mismatch",
+   "sources": [
+    {
+     "url": "https://govbusinessjournal.com/?p=104952",
+     "ok": true,
+     "kind": "html",
+     "chars": 10969
+    },
+    {
+     "url": "https://www.thecable.ng/nbs-nigeria-recorded-n7-4trn-trade-surplus-in-q2-2025",
+     "ok": true,
+     "kind": "html",
+     "chars": 5342
+    }
+   ],
+   "official_numbers": {
+    "52.60": true,
+    "47.40": true,
+    "34.21": true,
+    "13.39": true,
+    "3.05": true
+   },
+   "all_numbers_in_source": true,
+   "any_source_ok": true
+  },
+  {
+   "id": "T25-06",
+   "speaker": "Bola Tinubu",
+   "first_verdict": "match",
+   "sources": [
+    {
+     "url": "https://www.arise.tv/nigerias-gdp-growth-hits-4-43-in-q2-2026/",
+     "ok": true,
+     "kind": "html",
+     "chars": 6118
+    }
+   ],
+   "official_numbers": {
+    "1.68": true
+   },
+   "all_numbers_in_source": true,
+   "any_source_ok": true
+  },
+  {
+   "id": "T25-07",
+   "speaker": "Bola Tinubu",
+   "first_verdict": "mismatch",
+   "sources": [
+    {
+     "url": "https://www.thecable.ng/nuprc-nigerias-oil-output-rose-by-18-to-1-18m-bpd-in-may",
+     "ok": true,
+     "kind": "html",
+     "chars": 3897
+    }
+   ],
+   "official_numbers": {
+    "1,183,691": true,
+    "1,427,616": false,
+    "998,602": true
+   },
+   "all_numbers_in_source": false,
+   "any_source_ok": true
+  },
+  {
+   "id": "T25-08",
+   "speaker": "Bola Tinubu",
+   "first_verdict": "match",
+   "sources": [
+    {
+     "url": "https://breezynewsnigeria.com/?p=130597",
+     "ok": true,
+     "kind": "html",
+     "chars": 3867
+    }
+   ],
+   "official_numbers": {
+    "510,378": true
+   },
+   "all_numbers_in_source": true,
+   "any_source_ok": true
+  },
+  {
+   "id": "T25-09",
+   "speaker": "Bola Tinubu",
+   "first_verdict": "match",
+   "sources": [
+    {
+     "url": "https://breezynewsnigeria.com/?p=130597",
+     "ok": true,
+     "kind": "html",
+     "chars": 3867
+    }
+   ],
+   "official_numbers": {
+    "228": true
+   },
+   "all_numbers_in_source": true,
+   "any_source_ok": true
+  },
+  {
+   "id": "T25-10",
+   "speaker": "Bola Tinubu",
+   "first_verdict": "match",
+   "sources": [
+    {
+     "url": "https://breezynewsnigeria.com/?p=130597",
+     "ok": true,
+     "kind": "html",
+     "chars": 3867
+    }
+   ],
+   "official_numbers": {
+    "99.5": true
+   },
+   "all_numbers_in_source": true,
+   "any_source_ok": true
+  },
+  {
+   "id": "T25-11",
+   "speaker": "Bola Tinubu",
+   "first_verdict": "close",
+   "sources": [
+    {
+     "url": "https://breezynewsnigeria.com/?p=130597",
+     "ok": true,
+     "kind": "html",
+     "chars": 3867
+    }
+   ],
+   "official_numbers": {
+    "45.7": true
+   },
+   "all_numbers_in_source": true,
+   "any_source_ok": true
+  },
+  {
+   "id": "T25-12",
+   "speaker": "Bola Tinubu",
+   "first_verdict": "match",
+   "sources": [
+    {
+     "url": "https://africacheck.org/fact-checks/factsheets/factsheet-nigeria-rebases-its-economy-again-heres-what-sets-it-apart",
+     "ok": false,
+     "kind": "HTTPError: HTTP Error 403: Forbidden",
+     "chars": 0
+    }
+   ],
+   "official_numbers": {
+    "13.5": false
+   },
+   "all_numbers_in_source": false,
+   "any_source_ok": false
+  },
+  {
+   "id": "T25-13",
+   "speaker": "Bola Tinubu",
+   "first_verdict": "close",
+   "sources": [
+    {
+     "url": "https://www.agusto.com/?p=9548",
+     "ok": true,
+     "kind": "html",
+     "chars": 14722
+    }
+   ],
+   "official_numbers": {
+    "10.86": true
+   },
+   "all_numbers_in_source": true,
+   "any_source_ok": true
+  },
+  {
+   "id": "TB-01",
+   "speaker": "Bola Tinubu",
+   "first_verdict": "match",
+   "sources": [
+    {
+     "url": "https://www.channelstv.com/?p=983661",
+     "ok": true,
+     "kind": "html",
+     "chars": 3771
+    }
+   ],
+   "official_numbers": {
+    "3.98": true,
+    "3.86": true
+   },
+   "all_numbers_in_source": true,
+   "any_source_ok": true
+  },
+  {
+   "id": "TB-02",
+   "speaker": "Bola Tinubu",
+   "first_verdict": "match",
+   "sources": [
+    {
+     "url": "https://von.gov.ng/?p=503754",
+     "ok": true,
+     "kind": "html",
+     "chars": 27101
+    }
+   ],
+   "official_numbers": {
+    "14.45": true
+   },
+   "all_numbers_in_source": true,
+   "any_source_ok": true
+  },
+  {
+   "id": "TB-03",
+   "speaker": "Bola Tinubu",
+   "first_verdict": "match",
+   "sources": [
+    {
+     "url": "https://sweetcrudereports.com/?p=442455",
+     "ok": false,
+     "kind": "HTTPError: HTTP Error 403: Forbidden",
+     "chars": 0
+    }
+   ],
+   "official_numbers": {
+    "24.23": false
+   },
+   "all_numbers_in_source": false,
+   "any_source_ok": false
+  },
+  {
+   "id": "TB-04",
+   "speaker": "Bola Tinubu",
+   "first_verdict": "match",
+   "sources": [
+    {
+     "url": "https://nairametrics.com/2025/11/18/nigerias-foreign-reserves-hit-seven-year-high-reach-46-7-billion-cbn/",
+     "ok": true,
+     "kind": "html",
+     "chars": 6235
+    }
+   ],
+   "official_numbers": {
+    "46.7": true
+   },
+   "all_numbers_in_source": true,
+   "any_source_ok": true
+  },
+  {
+   "id": "TB-05",
+   "speaker": "Bola Tinubu",
+   "first_verdict": "match",
+   "sources": [
+    {
+     "url": "https://allafrica.com/stories/202511200364.html",
+     "ok": true,
+     "kind": "html",
+     "chars": 10577
+    }
+   ],
+   "official_numbers": {
+    "10.3": true
+   },
+   "all_numbers_in_source": true,
+   "any_source_ok": true
+  },
+  {
+   "id": "TB-06",
+   "speaker": "Bola Tinubu",
+   "first_verdict": "mismatch",
+   "sources": [
+    {
+     "url": "https://breezynewsnigeria.com/?p=130597",
+     "ok": true,
+     "kind": "html",
+     "chars": 3867
+    }
+   ],
+   "official_numbers": {
+    "510,378": true
+   },
+   "all_numbers_in_source": true,
+   "any_source_ok": true
+  },
+  {
+   "id": "TN-01",
+   "speaker": "Bola Tinubu",
+   "first_verdict": "match",
+   "sources": [
+    {
+     "url": "https://von.gov.ng/?p=503754",
+     "ok": true,
+     "kind": "html",
+     "chars": 27101
+    }
+   ],
+   "official_numbers": {
+    "14.45": true
+   },
+   "all_numbers_in_source": true,
+   "any_source_ok": true
+  },
+  {
+   "id": "TN-02",
+   "speaker": "Bola Tinubu",
+   "first_verdict": "mismatch",
+   "sources": [
+    {
+     "url": "https://businessday.ng/markets/article/ngx-group-steering-market-to-world-beating-51-19-rally-in-2025/",
+     "ok": true,
+     "kind": "html",
+     "chars": 7083
+    },
+    {
+     "url": "https://leadership.ng/?p=516703",
+     "ok": true,
+     "kind": "html",
+     "chars": 7195
+    }
+   ],
+   "official_numbers": {
+    "51.19": true,
+    "102,926": true,
+    "155,613": true
+   },
+   "all_numbers_in_source": true,
+   "any_source_ok": true
+  },
+  {
+   "id": "TN-03",
+   "speaker": "Bola Tinubu",
+   "first_verdict": "match",
+   "sources": [
+    {
+     "url": "https://thewhistler.ng/nigerias-fdi-jumps-700-to-720m-in-q3-cbn",
+     "ok": true,
+     "kind": "html",
+     "chars": 5715
+    },
+    {
+     "url": "https://von.gov.ng/?p=522786",
+     "ok": true,
+     "kind": "html",
+     "chars": 26814
+    }
+   ],
+   "official_numbers": {
+    "0.72": true,
+    "0.09": true,
+    "296.25": true,
+    "142.67": true
+   },
+   "all_numbers_in_source": true,
+   "any_source_ok": true
+  },
+  {
+   "id": "T26-01",
+   "speaker": "Bola Tinubu",
+   "first_verdict": "match",
+   "sources": [
+    {
+     "url": "https://www.arise.tv/nigerias-gdp-growth-hits-4-43-in-q2-2026/",
+     "ok": true,
+     "kind": "html",
+     "chars": 6118
+    },
+    {
+     "url": "https://nannews.ng/nigerias-gdp-grew-by-3-89-in-q1-2026-nbs/",
+     "ok": true,
+     "kind": "html",
+     "chars": 7547
+    }
+   ],
+   "official_numbers": {
+    "3.89": true,
+    "4.43": true,
+    "4.16": true
+   },
+   "all_numbers_in_source": true,
+   "any_source_ok": true
+  },
+  {
+   "id": "T26-02",
+   "speaker": "Bola Tinubu",
+   "first_verdict": "match",
+   "sources": [
+    {
+     "url": "https://nepc.gov.ng/?p=353688",
+     "ok": false,
+     "kind": "URLError: <urlopen error timed out>",
+     "chars": 0
+    }
+   ],
+   "official_numbers": {},
+   "all_numbers_in_source": false,
+   "any_source_ok": false
+  },
+  {
+   "id": "A26-01",
+   "speaker": "Atiku Abubakar",
+   "first_verdict": "match",
+   "sources": [
+    {
+     "url": "https://nairametrics.com/2026/09/26/nigerias-public-debt-rises-to-n166-79-trillion-in-q2-2026/",
+     "ok": true,
+     "kind": "html",
+     "chars": 5167
+    }
+   ],
+   "official_numbers": {
+    "166.79": true
+   },
+   "all_numbers_in_source": true,
+   "any_source_ok": true
+  },
+  {
+   "id": "A26-02",
+   "speaker": "Atiku Abubakar",
+   "first_verdict": "match",
+   "sources": [
+    {
+     "url": "https://nigerianstat.gov.ng/download/1241323",
+     "ok": true,
+     "kind": "pdf",
+     "chars": 3877
+    }
+   ],
+   "official_numbers": {
+    "254.06": true,
+    "118.1": false
+   },
+   "all_numbers_in_source": false,
+   "any_source_ok": true
+  },
+  {
+   "id": "A26-03",
+   "speaker": "Atiku Abubakar",
+   "first_verdict": "close",
+   "sources": [
+    {
+     "url": "https://www.premiumtimesng.com/?p=890568",
+     "ok": true,
+     "kind": "html",
+     "chars": 11452
+    },
+    {
+     "url": "https://nairametrics.com/2026/10/15/nigerias-energy-inflation-more-than-doubles-to-10-85-in-september/",
+     "ok": true,
+     "kind": "html",
+     "chars": 7263
+    }
+   ],
+   "official_numbers": {
+    "1,596.25": true,
+    "43.9": false,
+    "1,400": true,
+    "1,450": true
+   },
+   "all_numbers_in_source": false,
+   "any_source_ok": true
+  },
+  {
+   "id": "A26-04",
+   "speaker": "Atiku Abubakar",
+   "first_verdict": "match",
+   "sources": [
+    {
+     "url": "https://nigerianstat.gov.ng/download/1241329",
+     "ok": true,
+     "kind": "pdf",
+     "chars": 9147
+    },
+    {
+     "url": "https://nigerianstat.gov.ng/download/1241347",
+     "ok": true,
+     "kind": "pdf",
+     "chars": 11473
+    }
+   ],
+   "official_numbers": {
+    "88.22": true,
+    "89.17": true
+   },
+   "all_numbers_in_source": true,
+   "any_source_ok": true
+  },
+  {
+   "id": "A26-05",
+   "speaker": "Atiku Abubakar",
+   "first_verdict": "close",
+   "sources": [
+    {
+     "url": "https://nigerianstat.gov.ng/download/1241329",
+     "ok": true,
+     "kind": "pdf",
+     "chars": 9147
+    },
+    {
+     "url": "https://nigerianstat.gov.ng/download/1241347",
+     "ok": true,
+     "kind": "pdf",
+     "chars": 11473
+    }
+   ],
+   "official_numbers": {
+    "561.21": true,
+    "596.11": true,
+    "500": true
+   },
+   "all_numbers_in_source": true,
+   "any_source_ok": true
+  },
+  {
+   "id": "T25-15",
+   "speaker": "Bola Tinubu",
+   "first_verdict": "match",
+   "sources": [
+    {
+     "url": "https://govbusinessjournal.com/?p=104952",
+     "ok": true,
+     "kind": "html",
+     "chars": 10969
+    }
+   ],
+   "official_numbers": {
+    "173.0": true,
+    "67.2": true,
+    "803.8": true
+   },
+   "all_numbers_in_source": true,
+   "any_source_ok": true
+  },
+  {
+   "id": "TB-07",
+   "speaker": "Bola Tinubu",
+   "first_verdict": "match",
+   "sources": [
+    {
+     "url": "https://www.thecable.ng/breaking-nigerias-inflation-rate-drops-for-8th-consecutive-month-now-14",
+     "ok": true,
+     "kind": "html",
+     "chars": 5368
+    }
+   ],
+   "official_numbers": {},
+   "all_numbers_in_source": false,
+   "any_source_ok": true
+  }
+ ]
+}
