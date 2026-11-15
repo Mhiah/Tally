@@ -2,71 +2,112 @@
 
 **Do their numbers match?** An open, auditable dataset of the figures Nigerian leaders quote in national addresses, each one checked against the official release it refers to.
 
-Built for the Apart Research AI x Epistemics Research Sprint (13 to 15 November 2026), Track 4.
+Apart Research AI x Epistemics Research Sprint, 13 to 15 November 2026. Track 4 (Open Track).
 
-- Report: [`report/Tally-report.pdf`](report/Tally-report.pdf)
-- Dataset: [`data/claims.csv`](data/claims.csv)
-- Judge guide: [`JUDGES.md`](JUDGES.md)
+| | |
+|---|---|
+| Report | [`report/Tally-report.pdf`](report/Tally-report.pdf) |
+| Dataset | [`data/claims.csv`](data/claims.csv) |
+| Guide for judges | [`JUDGES.md`](JUDGES.md) |
+| Checking log | [`notes.md`](notes.md) |
 
-## The idea
+## In one paragraph
 
-Political speeches lean on numbers. Growth is up, inflation is down, reserves are at a record. Each of those numbers comes from somewhere: the statistics bureau, the central bank, the debt office. So in principle anyone can check them. In practice almost nobody does it systematically, and for Nigeria nobody has put the claims and the official figures side by side in one place that others can inspect and reuse.
+Five national addresses were chosen before any checking: four by President Bola Tinubu and one by opposition candidate Atiku Abubakar. The figures in them were listed (59), and 33 were checked against releases from Nigeria's statistics bureau, central bank, debt office and other official bodies. 31 could be scored. 23 matched, 4 were close and 4 did not match. Every scored row carries a link so the verdict can be checked.
 
-That gap matters for AI. Tools that check claims automatically are built and tested mostly on material from a handful of countries with tidy statistics. If we want those tools to work in Nigeria, we first need a record of real claims, the real figures behind them, and a verdict on each. Tally is a first, small version of that record.
+## Why this matters
 
-## What was done
+Political speeches lean on numbers. Growth is up, inflation is down, reserves are at a record. Each number comes from an official release, so in principle anyone can check it. In practice it is slow, and for Nigeria the author found no open dataset that puts the claims and the official figures side by side.
 
-1. **Picked the speeches first.** Five scripted national addresses with published full texts, from October 2025 to October 2026. Four are by President Bola Tinubu. One is by opposition candidate Atiku Abubakar, given the same morning as the President's 2026 Independence Day address, so that government and opposition go through the same check.
-2. **Listed the figures.** Each statement with a number about the economy or public money. Each speech was then read a second time to catch anything missed, which added eight. That gave 59 figures.
-3. **Looked up the official figure.** National Bureau of Statistics, Central Bank of Nigeria, Debt Management Office, the petroleum regulator, the student loan fund, the export council, the tax authority.
-4. **Gave each one a verdict**, with a link to the source.
+That gap matters for AI. Tools that check claims automatically are built and tested mostly on material from a few countries with tidy statistics. To know whether they work in Nigeria, someone first has to assemble real claims, the real figures behind them, and a verdict on each. The sprint brief asks for exactly this under Track 4: pair quantitative claims with the releases they cite, flag mismatches with links, and publish an auditable dataset. Tally is a first, small version.
+
+## Results
+
+| Verdict | Count | Share of the 31 scored |
+|---|---|---|
+| Match | 23 | 74% |
+| Close | 4 | 13% |
+| Mismatch | 4 | 13% |
+
+One further figure was unverifiable, one was a forecast, and 26 were listed but not checked.
+
+![Verdicts by speech](report/figure1.png)
+
+**What matched.** Every specific quarterly growth rate and monthly inflation rate quoted in the five speeches matched the statistics bureau exactly.
+
+**What did not match.**
+
+| Claim | Official figure | What went wrong |
+|---|---|---|
+| Non-oil exports are 48% of exports | Crude 52.60%. Non-crude 47.40%, of which petroleum products and gas 34.21% and non-oil 13.39% | A definition was swapped. The 48% is the non-crude share |
+| Oil output rose from "barely one million" barrels a day in May 2023 | 1,183,691 in May 2023. 998,602 was April | The baseline belongs to a different month |
+| The stock market gained 48.12% in 2025 | 51.19% for the full year | Out of date. 48.12% was the figure on 22 December |
+| Over 418,000 students supported by the loan fund | 510,378 already reported in September | Out of date, and lower than the President's own earlier figure |
+
+**Which way the errors ran.** Seven of the eight errors have a clear direction. Four helped the speaker's argument and three hurt it. The four that helped were the larger ones. Seven cases are too few to say anything about intent, and the report does not.
+
+**Two cases that do not fit match or mismatch.**
+
+- The President's foreign investment figure ($720 million) matches the central bank exactly. The statistics bureau reports $296 million for the same quarter. Both are official.
+- The fall in the debt service to revenue ratio "from 97% to below 50%" appears only in government statements. No published series was found.
+
+The two speakers should not be compared from these counts. One gave four speeches and the other gave one, and different shares were checked.
+
+## How the checking was done
+
+1. **Speeches fixed first.** Five scripted addresses with published full texts, October 2025 to October 2026. The opposition address was given the same morning as the President's 2026 Independence Day address, so both sides go through one procedure.
+2. **Figures listed.** Each statement with a number about the economy or public money. Proposals and targets were left out.
+3. **Official figure looked up.** National Bureau of Statistics, Central Bank of Nigeria, Debt Management Office, the petroleum regulator, the student loan fund, the export council.
+4. **Verdict given**, with a link.
 
 | Verdict | Meaning |
 |---|---|
 | match | The official figure agrees with the claim |
 | close | Within rounding, or within roughly 10 to 15 per cent |
-| mismatch | Materially different, or describes a different quantity from the one named |
-| unverifiable | Only the speaker's own side repeats the figure; no release found |
-| forecast | A prediction when spoken; recorded with its outcome, not scored |
-| not checked | Listed, but not reached in the time available |
+| mismatch | Materially different, or a different quantity from the one named |
+| unverifiable | Only the speaker's own side repeats the figure |
+| forecast | A prediction when spoken. Recorded with its outcome, not scored |
+| not checked | Listed, not reached |
 
-## What was found
+Then the work was checked three times, and the report says what each pass changed:
 
-32 of the 59 figures were checked. 30 could be scored.
+- **Audit pass.** Each speech was read again from scratch. Eight missed figures were added. One verdict was changed from close to match, and one lost its direction label.
+- **Verification pass.** The source link on every scored row was opened again and the figure read a second time. All 30 existing verdicts held. Eight rows had the recorded figure or the link corrected. One unchecked figure was confirmed and added.
+- **Claims pass.** Statements in the report that the evidence did not support were cut or toned down.
 
-| | Count | Share of scored |
-|---|---|---|
-| Match | 22 | 73% |
-| Close | 4 | 13% |
-| Mismatch | 4 | 13% |
+## Check it yourself in two minutes
 
-![Verdicts by speech](report/figure1.png)
+Open `data/claims.csv`, pick any scored row, open its `source_url`, and compare. Good rows to start with:
 
-- **Headline figures were accurate.** Every specific quarterly growth rate and monthly inflation rate quoted in the five speeches matched the statistics bureau exactly.
-- **The biggest error was a swapped definition.** The President said non-oil exports were 48 per cent of the total. The trade release shows crude oil at 52.6 per cent, but another 34.2 per cent was other petroleum products and gas. Exports outside oil and gas were about 13 per cent.
-- **Some figures were out of date.** The New Year message quoted a 48.12 per cent stock market gain. That was the figure on 22 December. The full-year gain was 51.19 per cent.
-- **Some baselines were off.** Oil output was said to have risen from "barely one million" barrels a day in May 2023. The regulator's May 2023 figure was about 1.18 million. The figure near one million was April.
-- **Errors ran both ways.** Of seven errors with a clear direction, four helped the speaker's argument and three hurt it. The ones that helped were the bigger ones. Seven is too few to say anything about intent.
-- **Two official sources can disagree.** The President's foreign investment figure ($720 million) matches the central bank. The statistics bureau reports $296 million for the same quarter. Both are official.
-- **One claim cannot be checked at all.** The fall in the debt service to revenue ratio "from 97% to below 50%" appears only in government statements.
+| Row | Why |
+|---|---|
+| `T25-05` | The non-oil exports claim. The most consequential finding |
+| `T25-07` | The oil baseline. One number, one month |
+| `TN-03` | Two official sources that disagree |
+| `TN-02` | A figure that was ten days out of date |
 
-The two speakers should not be compared from these counts. One gave four speeches and the other one, and different shares were checked.
+To reproduce every count in the report:
+
+```
+python3 analyze.py
+```
+
+Python 3 only. It prints the counts and rewrites `data/summary.json`. `python3 figure.py` redraws the chart and needs matplotlib.
 
 ## What is in this repository
 
 | Path | What it is |
 |---|---|
 | `data/claims.csv` | The dataset. One row per figure |
-| `data/summary.json` | Every count used in the report, produced by `analyze.py` |
+| `data/summary.json` | Every count used in the report |
 | `analyze.py` | Computes the counts from the dataset |
-| `figure.py` | Draws the chart from the dataset (needs matplotlib) |
-| `notes.md` | The working log kept while checking |
+| `figure.py` | Draws the chart from the dataset |
+| `notes.md` | The checking log, including what each pass changed |
 | `report/Tally-report.pdf` | The report |
 | `report/report.tex` | Report source |
-| `report/figure1.png` | The chart above |
-| `JUDGES.md` | A short guide for reviewers |
+| `JUDGES.md` | Where to look, claim by claim, and the weakest points |
 
-## The dataset columns
+## Dataset columns
 
 | Column | Meaning |
 |---|---|
@@ -80,39 +121,30 @@ The two speakers should not be compared from these counts. One gave four speeche
 | `source_type` | `primary document`, `press report of official release`, `independent secondary source`, or `government statement only` |
 | `source_url` | Link used for the check |
 | `verdict` | One of the six verdicts above |
-| `error_type` | For close and mismatch rows: definition, baseline, stale figure, transcription, official month not located |
+| `error_type` | For close and mismatch rows |
 | `direction` | `favourable` if the error helps the speaker's argument, `unfavourable` if it hurts |
-| `note` | Anything a reader needs to interpret the row |
-
-## Reproduce the numbers
-
-You need Python 3 and nothing else.
-
-```
-python3 analyze.py
-```
-
-This prints the counts and rewrites `data/summary.json`.
+| `note` | Anything needed to interpret the row, including second links |
 
 ## Limits
 
-- It is small: five speeches, 30 scored figures. 27 listed figures are unchecked.
-- The first pass missed eight figures. A second read found them. Others may still be missing.
-- The checked figures were the most prominent ones, not a random sample. The 73 per cent applies to them only.
-- An AI assistant did the extraction and checking. There was no second checker and no human check of every row.
-- Only 3 scored figures were checked against the primary document. The others rely on press reports that quote the official release.
-- Official figures are the reference point here. They can be wrong or revised too.
+- **Small.** Five speeches, 31 scored figures, 26 unchecked.
+- **Not a random sample.** The most prominent figures were checked first. The 74% applies to the checked figures only.
+- **One checker.** An AI assistant did the extraction and checking. The three passes above were also done by it. No second person verified the rows.
+- **Mostly secondary sources.** 3 scored figures were read from the statistics bureau's own document. 26 rely on press reports quoting the official release and 2 on independent secondary sources.
+- **Two verdicts rest on arithmetic, not a quoted figure.** The 44.3% rise in the trade surplus was recomputed from the report's own numbers. "Over 4 per cent" growth in 2026 uses two official quarterly rates whose average is not an official figure.
+- **The list may be incomplete.** The first pass missed eight figures.
+- **Official figures are the reference, not the truth.** They can be wrong or revised, and several series were rebased during the period.
 
-This is a starting dataset, not a fact-check of record. Please re-check a row before you rely on it. The link is on the row for that purpose.
+This is a starting dataset, not a fact-check of record. Re-check a row before relying on it.
 
 ## How to extend it
 
-- Check the 27 rows marked `not checked`.
-- Replace press report links with the primary release where one is online.
-- Add more speeches and more speakers, using the same procedure.
+- Check the 26 rows marked `not checked`.
+- Replace press links with the primary release where one is online.
+- Add speeches and speakers using the same procedure.
 - Have a second person verify each verdict.
 
-## AI assistance
+## AI assistance and prior work
 
 An AI assistant (Claude, Anthropic) did the web research, checking, analysis script and drafting, under the author's direction. Nothing in this repository existed before the sprint.
 
