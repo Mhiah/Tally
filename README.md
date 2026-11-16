@@ -13,7 +13,7 @@ Apart Research AI x Epistemics Research Sprint, 13 to 15 November 2026. Track 4 
 
 ## In one paragraph
 
-Five national addresses were chosen before any checking: four by President Bola Tinubu and one by opposition candidate Atiku Abubakar. The figures in them were listed (59), and 33 were checked against releases from Nigeria's statistics bureau, central bank, debt office and other official bodies. 31 could be scored. 23 matched, 4 were close and 4 did not match. Every scored row carries a link so the verdict can be checked.
+Five national addresses were chosen before any checking: four by President Bola Tinubu and one by opposition candidate Atiku Abubakar. The figures in them were listed (59), and 33 were checked against releases from Nigeria's statistics bureau, central bank, debt office and other official bodies. 31 could be scored. 23 matched, 5 were close and 3 did not match. Two independent checks were then run: a script with no AI in it, and a blind second coder using a different AI model. Every scored row carries a link so the verdict can be checked.
 
 ## Why this matters
 
@@ -26,8 +26,8 @@ That gap matters for AI. Tools that check claims automatically are built and tes
 | Verdict | Count | Share of the 31 scored |
 |---|---|---|
 | Match | 23 | 74% |
-| Close | 4 | 13% |
-| Mismatch | 4 | 13% |
+| Close | 5 | 16% |
+| Mismatch | 3 | 10% |
 
 One further figure was unverifiable, one was a forecast, and 26 were listed but not checked.
 
@@ -35,14 +35,25 @@ One further figure was unverifiable, one was a forecast, and 26 were listed but 
 
 **What matched.** Every specific quarterly growth rate and monthly inflation rate quoted in the five speeches matched the statistics bureau exactly.
 
-**What did not match.**
+**What did not match exactly.** Three mismatches and the most notable close call:
 
 | Claim | Official figure | What went wrong |
 |---|---|---|
 | Non-oil exports are 48% of exports | Crude 52.60%. Non-crude 47.40%, of which petroleum products and gas 34.21% and non-oil 13.39% | A definition was swapped. The 48% is the non-crude share |
 | Oil output rose from "barely one million" barrels a day in May 2023 | 1,183,691 in May 2023. 998,602 was April | The baseline belongs to a different month |
-| The stock market gained 48.12% in 2025 | 51.19% for the full year | Out of date. 48.12% was the figure on 22 December |
+| The stock market gained 48.12% in 2025 (close) | 51.19% for the full year | Out of date. 48.12% was the figure on 22 December |
 | Over 418,000 students supported by the loan fund | 510,378 already reported in September | Out of date, and lower than the President's own earlier figure |
+
+**Does a second checker agree?** A different AI model (gpt-5.4-mini through SERV Reasoning) coded the same 31 rows blind. It saw the claim and the source text, and nothing of the first checker's verdict, figure or notes.
+
+| | |
+|---|---|
+| Same verdict | 22 of 31 (71%), Cohen's kappa 0.34 |
+| Same on match versus not | 26 of 31 (84%) |
+| Match rate, first checker | 74% |
+| Match rate, second coder | 71% |
+
+The match rate holds up under a second checker. The line between "close" and "mismatch" does not: four of the nine disagreements are rows one called close and the other called mismatch. Read the eight rows that did not match exactly as one group. All nine disagreements are listed in Appendix B of the report with what was done about each. One verdict was changed as a result, and one is marked contested.
 
 **Which way the errors ran.** Seven of the eight errors have a clear direction. Four helped the speaker's argument and three hurt it. The four that helped were the larger ones. Seven cases are too few to say anything about intent, and the report does not.
 
@@ -69,11 +80,12 @@ The two speakers should not be compared from these counts. One gave four speeche
 | forecast | A prediction when spoken. Recorded with its outcome, not scored |
 | not checked | Listed, not reached |
 
-Then the work was checked three times, and the report says what each pass changed:
+Then the work was checked five ways, and the report says what each changed:
 
 - **Audit pass.** Each speech was read again from scratch. Eight missed figures were added. One verdict was changed from close to match, and one lost its direction label.
 - **Verification pass.** The source link on every scored row was opened again and the figure read a second time. All 30 existing verdicts held. Eight rows had the recorded figure or the link corrected. One unchecked figure was confirmed and added.
 - **Claims pass.** Statements in the report that the evidence did not support were cut or toned down.
+- **Blind second coder.** A different AI model coded all 31 rows without seeing the first verdicts. Results above. It moved one verdict from mismatch to close, found two April 2023 prices the first pass had missed, and contested one verdict.
 - **Mechanical check, no AI.** `second_check.py` runs on a clean GitHub machine, downloads every source and tests by plain text matching whether the recorded official numbers are on the page. All 31 scored rows had a source that opened. In 26 every number was found. In the other 5 the quoted numbers were found and the missing item was the checker's own arithmetic, a number written in another form, or a non-numeric figure. Output: `check/second_check.json`.
 
 ## Check it yourself in two minutes
@@ -132,7 +144,7 @@ Python 3 only. It prints the counts and rewrites `data/summary.json`. `python3 f
 
 - **Small.** Five speeches, 31 scored figures, 26 unchecked.
 - **Not a random sample.** The most prominent figures were checked first. The 74% applies to the checked figures only.
-- **One checker.** An AI assistant did the extraction and checking. The three passes above were also done by it. No second person verified the rows.
+- **No human checker.** An AI assistant did the extraction and checking. The second coder is also an AI model and read the sources the first had chosen. Their agreement was only fair (kappa 0.34), mostly over close versus mismatch. No person verified the rows.
 - **Mostly secondary sources.** 3 scored figures were read from the statistics bureau's own document. 26 rely on press reports quoting the official release and 2 on independent secondary sources.
 - **Two verdicts rest on arithmetic, not a quoted figure.** The 44.3% rise in the trade surplus was recomputed from the report's own numbers. "Over 4 per cent" growth in 2026 uses two official quarterly rates whose average is not an official figure.
 - **The list may be incomplete.** The first pass missed eight figures.

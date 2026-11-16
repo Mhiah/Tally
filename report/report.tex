@@ -27,7 +27,7 @@
 
 \begin{abstract}
 \noindent
-Tools that check public claims against official statistics need ground truth: claims paired with the release they cite and a verdict. The author found no open dataset of this kind for Nigeria. This project builds a first one. The figures in five scripted national addresses from October 2025 to October 2026 were listed: four by President Bola Tinubu and one by opposition candidate Atiku Abubakar. That gave 59 figures. Thirty-three were checked against releases from the statistics bureau, the central bank, the debt office and other official bodies, and 31 could be scored. Of those, 23 matched the official figure (74\%), 4 were close (13\%) and 4 did not match (13\%). The errors ran in both directions: of seven with a clear direction, four favoured the speaker's argument and three cut against it, although the favourable ones were the larger. A definition was swapped (``non-oil'' exports of 48\% that are mostly petroleum products and gas; exports outside oil and gas were 13.4\%). Figures were stale (a stock-market gain quoted from ten days earlier). A baseline month was misattributed. One claim matched one official source while a second official source gave less than half the amount. One could not be checked because only the government's own statement exists. The dataset, with a source link on every scored row, is public. It is small, was checked by an AI assistant without a second checker, and relies mostly on press reports of official releases.
+Tools that check public claims against official statistics need ground truth: claims paired with the release they cite and a verdict. The author found no open dataset of this kind for Nigeria and builds a first one. The figures in five scripted national addresses from October 2025 to October 2026 were listed: four by President Bola Tinubu and one by opposition candidate Atiku Abubakar. That gave 59 figures. Thirty-three were checked against releases from the statistics bureau, the central bank and other official bodies, and 31 could be scored. Of those, 23 matched the official figure (74\%), 5 were close (16\%) and 3 did not match (10\%). The errors were stale figures, misattributed baselines and one swapped definition: ``non-oil'' exports of 48\% that are mostly petroleum products and gas, where exports outside oil and gas were 13.4\%. Of seven errors with a clear direction, four favoured the speaker and three did not. Two independent checks were run. A script with no AI in it found the recorded official numbers in the cited sources for all 31 rows. A blind second coder, a different AI model shown only the claim and the source text, gave the same verdict on 22 of 31 rows (Cohen's $\kappa = 0.34$) and found a nearly identical match rate (71\%). The match rate is therefore robust, while the line between ``close'' and ``mismatch'' is not. The dataset is public, small, has no human second checker, and relies mostly on press reports of official releases.
 \end{abstract}
 
 \section{Introduction}
@@ -75,11 +75,15 @@ Finally, the source link on every scored row was opened again and the figure rea
 
 \subsection{Who did the checking}
 
-All extraction and checking was done by an AI assistant (Claude, Anthropic) using web search, directed by the author. There was no second checker. Three figures were verified against the primary document. Of the other 28 scored figures, 26 were verified through press reports that quote the official release and two through independent secondary sources, with the source linked on the row. Section~\ref{sec:limits} sets out what this means for reliability.
+All extraction and checking was done by an AI assistant (Claude, Anthropic) using web search, directed by the author. No human checked the rows. Three figures were verified against the primary document. Of the other 28 scored figures, 26 were verified through press reports that quote the official release and two through independent secondary sources, with the source linked on the row. Section~\ref{sec:limits} sets out what this means for reliability.
 
 \subsection{An independent mechanical check}
 
 To test the dataset without relying on the checker's own reading, a script (\texttt{second\_check.py}) was run on a clean machine through GitHub Actions. For each of the 31 scored rows it downloads the linked sources and tests, by plain text matching with no AI involved, whether the numbers recorded as the official figure appear in the page. All 31 rows had at least one source that opened. In 26 rows every recorded number was found. In the other five the decisive quoted numbers were found and the missing item was either a number the checker derived by arithmetic (three rows), a figure the source writes in a different form (``1.427 million'' for 1,427,616), or a row whose official figure is not a number (``eighth consecutive fall''). This shows that the official figures in the dataset are really in the sources cited. It does not test whether each verdict is the right reading of them. The output is \texttt{check/second\_check.json}.
+
+\subsection{A blind second coder}
+
+A different AI model (\texttt{gpt-5.4-mini}, through the SERV Reasoning service) then coded the same 31 rows. It was shown only the claim, the speech and the downloaded source text, with the verdict definitions. It was not shown the first checker's verdict, official figure or notes. Agreement is reported in Section~\ref{sec:second} and every disagreement is listed in Appendix~\ref{sec:disagree}. The second coder read the sources the first checker had chosen, so this tests the reading and coding of sources, not their selection.
 
 \section{Results}
 
@@ -92,7 +96,7 @@ To test the dataset without relying on the checker's own reading, a script (\tex
 \label{fig:verdicts}
 \end{figure}
 
-Of the 33 figures checked, 31 could be scored: 23 matched (74\%), 4 were close (13\%) and 4 did not match (13\%). One was unverifiable and one was a forecast (Table~\ref{tab:verdicts}). Headline macroeconomic figures were reliable: every specific quarterly GDP growth rate and monthly inflation rate quoted in the five speeches matched the statistics bureau's release exactly.
+Of the 33 figures checked, 31 could be scored: 23 matched (74\%), 5 were close (16\%) and 3 did not match (10\%). One was unverifiable and one was a forecast (Table~\ref{tab:verdicts}). Headline macroeconomic figures were reliable: every specific quarterly GDP growth rate and monthly inflation rate quoted in the five speeches matched the statistics bureau's release exactly.
 
 \begin{table}[h]
 \centering
@@ -102,10 +106,10 @@ Of the 33 figures checked, 31 could be scored: 23 matched (74\%), 4 were close (
 \toprule
  & Listed & Match & Close & Mismatch & Unverif. & Forecast & Unchecked \\
 \midrule
-President Tinubu (4 addresses) & 48 & 20 & 2 & 4 & 1 & 1 & 20 \\
+President Tinubu (4 addresses) & 48 & 20 & 3 & 3 & 1 & 1 & 20 \\
 Atiku Abubakar (1 address) & 11 & 3 & 2 & 0 & 0 & 0 & 6 \\
 \midrule
-Total & 59 & 23 & 4 & 4 & 1 & 1 & 26 \\
+Total & 59 & 23 & 5 & 3 & 1 & 1 & 26 \\
 \bottomrule
 \end{tabular}
 \caption{All 59 listed figures by verdict.}
@@ -116,11 +120,11 @@ The two speakers cannot be compared from these counts. They gave different numbe
 
 \subsection{How the figures went wrong}
 
-The four mismatches and four close calls fall into the following types.
+The three mismatches and five close calls fall into the following types.
 
 \textbf{A definition was swapped.} The October 2025 broadcast said non-oil exports ``now represent 48 per cent, compared to oil exports, which account for 52 per cent''. The trade release for that quarter shows crude oil at 52.60\% of exports and ``non-crude oil'' at 47.40\%. Within that, other petroleum products and gas were 34.21\% and the bureau's own ``non-oil'' category was 13.39\%. The 48\% is the non-crude share, presented as non-oil. This is the most consequential error in the set, because the claim is about diversification away from oil.
 
-\textbf{A baseline was misattributed or understated.} The same broadcast said oil output had recovered ``from barely one million [barrels a day] in May 2023''. The regulator recorded 1,183,691 barrels a day of crude in May 2023; the figure near one million (998,602) was April. The tax-to-GDP ratio was said to have risen ``from less than 10 per cent''; the revised official estimate for 2021 was 10.86\%, and the President himself had said ``from 10\%'' four months earlier. The 13.5\% end point matches the published 2024 figure, but that figure predates the July 2025 GDP rebasing, which raised measured GDP by about 34\% and so lowers the ratio; no official rebased ratio was found. The opposition address put a sliced loaf at ``about \N 500'' in April 2023; the statistics bureau's average was \N 561.21 in March 2023 and \N 596.11 in May (the April table was not located). In each case the lower starting point makes the change look larger.
+\textbf{A baseline was misattributed or understated.} The same broadcast said oil output had recovered ``from barely one million [barrels a day] in May 2023''. The regulator recorded 1,183,691 barrels a day of crude in May 2023; the figure near one million (998,602) was April. The tax-to-GDP ratio was said to have risen ``from less than 10 per cent''; the revised official estimate for 2021 was 10.86\%, and the President himself had said ``from 10\%'' four months earlier. The 13.5\% end point matches the published 2024 figure, but that figure predates the July 2025 GDP rebasing, which raised measured GDP by about 34\% and so lowers the ratio; no official rebased ratio was found. The opposition address put a sliced loaf at ``about \N 500'' in April 2023; the statistics bureau's average was \N 577.41. In each case the lower starting point makes the change look larger.
 
 \textbf{Figures were stale.} The New Year message said the stock market had gained 48.12\% in 2025. That was the year-to-date return on 22 December; the full-year return was 51.19\%. The budget speech said ``over 418,000'' students had been supported by the loan fund, although the fund had reported 510,378 beneficiaries in September and the President had cited about 510,000 eleven weeks earlier. Both errors understate the speaker's own case.
 
@@ -133,6 +137,15 @@ The four mismatches and four close calls fall into the following types.
 
 Seven of the eight errors have a clear direction. Four favoured the speaker's argument and three cut against it (President: 3 and 3; opposition: 1 and 0). The two groups differ in kind. The favourable errors are the larger ones: a swapped definition and three misattributed or understated baselines. The unfavourable ones are stale or mistranscribed figures that undersell the speaker's own record. Seven errors are far too few to support a claim about intent. The pattern is consistent with stale briefing notes and loose definitions, and it does not rule out selective framing where the favourable errors are concerned.
 
+\subsection{What the second coder found}
+\label{sec:second}
+
+The second coder gave the same verdict as the first on 22 of 31 rows (71\%; Cohen's $\kappa = 0.34$). Treating the verdict as two classes, match or not, the two agreed on 26 of 31 (84\%). The second coder's own tally was 22 matches, 2 close, 6 mismatches and one row it could not judge, so its match rate (71\%) is almost the same as the first checker's (74\%).
+
+Two things follow. First, the headline is robust: about three in four checked figures match, whichever checker is used, and both independently flagged the non-oil exports claim and the student-loan figure as mismatches. Second, the boundary between ``close'' and ``mismatch'' is not reliable. Four of the nine disagreements are rows the first checker called close and the second called mismatch. The eight rows that did not match exactly are best read as one group.
+
+The second check changed the dataset in three places. It showed that the stock-market figure (48.12\% against 51.19\%) is within the stated ten per cent threshold, so that row was moved from mismatch to close. It located the April 2023 food prices that the first checker had failed to find. And it contested the oil-baseline verdict, reading ``barely one million'' as a fair description of 1.18 million barrels a day; that row remains a mismatch here because the gap exceeds fifteen per cent and the figure near one million belongs to the previous month, but it is marked as contested.
+
 \subsection{Two cases a match/mismatch scheme cannot hold}
 
 \textbf{Two official sources disagree.} The New Year message said foreign direct investment ``rose to \$720 million, up from \$90 million in the preceding quarter''. The central bank's balance of payments for the third quarter of 2025 gives exactly these figures. The statistics bureau's capital importation report for the same quarter gives \$296.25 million, up from \$142.67 million. The two series are compiled by different agencies from different records, but both are official and both are called FDI. The claim is scored as a match, and the row records the conflict. A checker with access to only one series would return a confident verdict either way.
@@ -143,13 +156,13 @@ Seven of the eight errors have a clear direction. Four favoured the speaker's ar
 
 \textbf{What this suggests for claim-checking tools.} The easy cases here are very easy: a named statistic for a named period, published once. Most of this set is of that kind. The cases that matter are the others. Catching the non-oil export claim requires knowing that the released category is ``crude oil'', not ``oil'', and reading the breakdown. Catching the oil baseline requires checking the month. The FDI case requires knowing that two official series exist. None of these is solved by retrieving a number and comparing it.
 
-\textbf{What this suggests for those who write the speeches.} Two of the four mismatches would have been avoided by using the latest figure. Both understated the government's own record.
+\textbf{What this suggests for those who write the speeches.} Two of the eight errors would have been avoided by using the latest figure. Both understated the government's own record.
 
 \textbf{What the dataset is for.} Each row gives the claim, the speech, the official figure, the source, a verdict, an error type and a direction. That is enough to use the scored rows as a small test set for claim-verification systems in a low-resource statistical setting, and the 26 unchecked rows are open tasks. It is a starting point, and it should be extended and independently re-checked before anyone relies on it.
 
 \section{Conclusion}
 
-Across five Nigerian national addresses, 31 figures were scored against official releases. About three in four matched, and headline growth and inflation figures were quoted accurately every time. The errors that did occur were mostly stale figures, loose baselines and one swapped definition, and on the few cases available they ran in both directions, with the larger ones favouring the speaker. Two claims exposed limits in the idea of a single official number. The dataset is public, with a link on every scored row, so that each verdict can be checked.
+Across five Nigerian national addresses, 31 figures were scored against official releases. About three in four matched, a rate a blind second coder reproduced, and headline growth and inflation figures were quoted accurately every time. The errors that did occur were mostly stale figures, loose baselines and one swapped definition, and on the few cases available they ran in both directions, with the larger ones favouring the speaker. Two claims exposed limits in the idea of a single official number. The dataset is public, with a link on every scored row, so that each verdict can be checked.
 
 \begin{thebibliography}{9}\small
 \bibitem{vaintrob_gap} L. Vaintrob. The AI Adoption Gap. Forethought, 2025. \url{https://www.forethought.org/research/the-ai-adoption-gap}
@@ -168,7 +181,7 @@ Across five Nigerian national addresses, 31 figures were scored against official
 \begin{itemize}
 \item \textbf{Small and incomplete.} Five speeches, 59 figures, 31 scored. Twenty-six listed figures were not checked, and the first extraction pass missed eight figures, so others may still be missing.
 \item \textbf{Checked figures were not chosen at random.} Prominent figures were checked first. The 74\% match rate applies to the checked set only.
-\item \textbf{A single AI checker.} One AI assistant did the extraction and checking, with no second checker and no human verification of each row. The audit and verification passes were done by the same assistant, so they catch slips but are not independent replication. The mechanical check is independent of the assistant but only confirms that the recorded numbers are in the sources. Errors in the dataset are possible. Every scored row carries a link so that the verdict can be audited.
+\item \textbf{No human checker.} One AI assistant did the extraction and checking. The second coder is also an AI model, and it read the sources the first had chosen. Agreement between the two was only fair ($\kappa = 0.34$), mostly over where ``close'' ends and ``mismatch'' begins. No person verified each row. The audit and verification passes were done by the same assistant, so they catch slips but are not independent replication. The mechanical check is independent of the assistant but only confirms that the recorded numbers are in the sources. Errors in the dataset are possible. Every scored row carries a link so that the verdict can be audited.
 \item \textbf{Mostly secondary sources.} Only 3 of the 31 scored figures were verified against the primary document. The rest rely on press reports quoting the official release or, in two cases, on independent secondary sources. A few links are to later reports that restate an earlier figure. Where several outlets reported the same figure this is low-risk, but it is not the same as reading the release.
 \item \textbf{Extraction relied on published transcripts,} which may differ from the speech as delivered, and was done with a tool that truncates long quotations, so claim wording in the dataset is sometimes an excerpt.
 \item \textbf{Verdict thresholds are judgement calls.} ``Close'' and ``mismatch'' are separated by a rough ten to fifteen per cent rule, and the direction labels reflect the checker's reading of each speaker's argument.
@@ -191,6 +204,29 @@ An AI assistant (Claude, Anthropic) did the web research, the checking, the anal
 
 \subsection*{Reproducibility}
 
+The second coder's verdicts and reasons are in \texttt{check/second\_check.json}; the agreement figures are computed by \texttt{analyze.py}.
+
 The dataset is \texttt{data/claims.csv} in the repository \cite{tally}. Every count in this report is produced by \texttt{analyze.py} from that file. The verification log kept during checking is \texttt{notes.md}.
+
+
+\section{Disagreements between the two checkers}
+\label{sec:disagree}
+
+{\small
+\begin{tabularx}{\linewidth}{@{}l l l X@{}}
+\toprule
+Row & First & Second & What happened \\
+\midrule
+T25-07 & mismatch & match & Oil output ``barely one million'' against 1,183,691. Second coder accepted it as a hedge. Kept as mismatch, marked contested. \\
+T25-11 & close & mismatch & \N 44.7bn against \N 45.7bn, a 2\% gap. Kept as close under the threshold. \\
+T25-13 & close & mismatch & ``Less than 10 per cent'' against 10.86\%. Kept as close under the threshold. \\
+TB-04 & match & close & ``About US\$47 billion'' against \$46.7bn. Kept as match because of the hedge. \\
+TN-02 & mismatch & match & 48.12\% against 51.19\%. Second coder read only the 22 December figure. Within ten per cent, so changed to close. \\
+T26-01 & match & close & ``Over 4 per cent this year''. Second coder noted there is no official half-year figure. Kept as match; the row says the average is derived. \\
+A26-02 & match & mismatch & Second coder's stated reason supports a match (118 litres); its label contradicts its reason. Kept as match. \\
+A26-03 & close & cannot judge & Petrol price for the month of the speech not in the sources. Kept as close; the row says the official month was not found. \\
+A26-05 & close & mismatch & Bread ``about \N 500'' against \N 577.41, a 13\% gap. Kept as close under the threshold. \\
+\bottomrule
+\end{tabularx}}
 
 \end{document}

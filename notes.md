@@ -62,3 +62,10 @@ Every source link on a scored row was re-opened and the figure read again. Outco
 - A26-04, A26-05: the NBS file I had linked as April 2023 shows March 2023 columns (egg 88.22, bread 561.21); the other file is May 2023 (egg 89.17, bread 596.11). April not located. Verdicts unchanged, figures corrected.
 - A26-01: original Guardian link would not open; replaced with Nairametrics report of the same DMO release.
 - Removed two details from row notes that I could not re-verify (a 3 September NELFUND figure; a second CBN reserves series).
+
+## Blind second coder (16 Nov)
+gpt-5.4-mini via SERV, shown claim + downloaded source text only. Same verdict on 22 of 31; kappa 0.34; match-vs-not 26 of 31.
+- TN-02 moved mismatch -> close (48.12 vs 51.19 is within 10%; I had not applied my own threshold).
+- A26-04, A26-05: April 2023 figures (egg N88.17, bread N577.41) are in the comparison column of the May 2023 report. Found by the second coder.
+- T25-07 contested: second coder accepts "barely one million" for 1.18m. Kept mismatch (gap over 15%, and the ~1.0m figure is April).
+- A26-02: second coder's label (mismatch) contradicts its own reason (118 litres, consistent). Kept match.

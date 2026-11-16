@@ -2,8 +2,8 @@
  "figures_listed": 59,
  "verdicts": {
   "match": 23,
-  "mismatch": 4,
-  "close": 4,
+  "mismatch": 3,
+  "close": 5,
   "unverifiable": 1,
   "forecast": 1,
   "not checked": 26
@@ -11,8 +11,8 @@
  "scored": 31,
  "scored_share": {
   "match": 74.2,
-  "close": 12.9,
-  "mismatch": 12.9
+  "close": 16.1,
+  "mismatch": 9.7
  },
  "by_speaker": {
   "Atiku Abubakar": {
@@ -22,8 +22,8 @@
   },
   "Bola Tinubu": {
    "match": 20,
-   "mismatch": 4,
-   "close": 2,
+   "mismatch": 3,
+   "close": 3,
    "unverifiable": 1,
    "forecast": 1,
    "not checked": 20
@@ -44,7 +44,7 @@
   },
   "Bola Tinubu | New Year message | 2026-01-01": {
    "match": 2,
-   "mismatch": 1,
+   "close": 1,
    "forecast": 1,
    "not checked": 1
   },
@@ -82,5 +82,63 @@
   "press report of official release": 26,
   "independent secondary source": 2,
   "primary document": 3
+ },
+ "second_coder": {
+  "model": "gpt-5.4-mini-2026-03-17",
+  "rows": 31,
+  "same_verdict": 22,
+  "same_verdict_share": 71.0,
+  "cohens_kappa": 0.34,
+  "same_on_match_vs_not": 26,
+  "same_on_match_vs_not_share": 83.9,
+  "disagreements": {
+   "T25-07": [
+    "mismatch",
+    "match"
+   ],
+   "T25-11": [
+    "close",
+    "mismatch"
+   ],
+   "T25-13": [
+    "close",
+    "mismatch"
+   ],
+   "TB-04": [
+    "match",
+    "close"
+   ],
+   "TN-02": [
+    "mismatch",
+    "match"
+   ],
+   "T26-01": [
+    "match",
+    "close"
+   ],
+   "A26-02": [
+    "match",
+    "mismatch"
+   ],
+   "A26-03": [
+    "close",
+    "not_in_source"
+   ],
+   "A26-05": [
+    "close",
+    "mismatch"
+   ]
+  },
+  "second_coder_counts": {
+   "match": 22,
+   "mismatch": 6,
+   "close": 2,
+   "not_in_source": 1
+  }
+ },
+ "mechanical_check": {
+  "rows": 31,
+  "a_source_opened": 31,
+  "all_recorded_numbers_found": 26
  }
 }
