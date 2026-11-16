@@ -54,7 +54,7 @@ That gap matters for AI. Tools that check claims automatically are built and tes
 | `T25-13` | Tax-to-GDP rose "from less than 10 per cent" | 10.86% | close | Baseline understated |
 | `T25-11` | Student upkeep allowance of N44.7 billion | N45.7 billion | close | Transcription |
 | `A26-05` | A sliced loaf was "about N500" in April 2023 | N577.41 | close | Baseline understated |
-| `A26-03` | N70,000 "buys just 50 litres" of petrol | 44 litres at the latest official price found; 48 to 50 at pump prices that month | close | Official figure for the month not found |
+| `A26-03` | N70,000 "buys just 50 litres" of petrol | 44 litres at the latest official price found; 48 to 50 at pump prices reported the month before | close | Official figure for the month not found |
 
 **The errors ran both ways.** Seven of the eight have a clear direction. Four helped the speaker's argument and three hurt it. The biggest single error, the non-oil exports definition, helped. Seven cases are too few to say anything about intent, and the report does not.
 
@@ -152,7 +152,7 @@ It prints the counts and the agreement figures and rewrites `data/summary.json`.
 
 - **Small.** Five speeches, 31 scored figures, 26 unchecked.
 - **Not a random sample.** The most prominent figures were checked first. The 74% applies to the checked figures only.
-- **No human checker.** Both checkers are AI models. Their agreement was only fair (kappa 0.34), mostly over where close ends and mismatch begins. Read the eight rows that did not match exactly as one group.
+- **No human checker.** Both checkers are AI models. Their agreement was only fair (kappa 0.34). Five of the nine disagreements sit on the edges of the close category. Read the eight rows that did not match exactly as one group.
 - **Source choice was not independently tested.** The second coder read the sources the first checker picked.
 - **Mostly secondary sources.** 3 scored figures were read from the statistics bureau's own document. 26 rely on press reports quoting the official release and 2 on independent secondary sources.
 - **Two verdicts rest on arithmetic, not a quoted figure.** The 44.3% rise in the trade surplus was recomputed from the report's own numbers. "Over 4 per cent" growth in 2026 uses two official quarterly rates whose average is not an official figure.
