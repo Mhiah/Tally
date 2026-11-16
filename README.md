@@ -10,7 +10,7 @@ Apart Research AI x Epistemics Research Sprint, 13 to 15 November 2026. Track 4 
 | Dataset | [`data/claims.csv`](data/claims.csv) |
 | Guide for judges | [`JUDGES.md`](JUDGES.md) |
 | Slides | [`slides/Tally-slides.pdf`](slides/Tally-slides.pdf) |
-| Presentation (under 3 minutes, narrated) | [`slides/Tally-presentation.mp4`](slides/Tally-presentation.mp4) |
+| Presentation (about 3 minutes, narrated) | [`slides/Tally-presentation.mp4`](slides/Tally-presentation.mp4) |
 | Second-check results | [`check/second_check.json`](check/second_check.json) |
 | Checking log | [`notes.md`](notes.md) |
 
@@ -32,6 +32,17 @@ The dataset was then tested twice by means that do not depend on the first check
 The blind second coder found a match rate of 73% against 80%, and gave the same verdict on 32 of 45 rows. So the broad result holds under a second checker: most figures match. Individual verdicts near the category boundaries are less reliable, and the second coder disagreed on one of the two headline findings. The report says so.
 
 The two most consequential errors are in the same speech and both attach the label "non-oil" to a figure that includes oil.
+
+## How this fits Track 4 (deployment, adoption and impact)
+
+Track 4 asks what it takes for epistemic tools to be deployed, adopted and useful in the real world. The track brief suggests this very project: pair quantitative claims with the statistical releases they cite, flag mismatches with links, and publish an auditable dataset.
+
+- **Deployment.** Claim-checking tools are built and tested mostly where statistics are tidy. Tally is a test set from a setting where they are not, so a tool can be tried against it before anyone relies on it there.
+- **A small deployment test is included.** The blind second coder is an off-the-shelf model given the right source for each claim. It agreed with most verdicts, but it missed one of the two "non-oil" label swaps: it read both revenue figures correctly and still called the claim a match. That is the kind of failure a deployed checker would make.
+- **Adoption.** The work surfaced concrete things that get in the way of using such tools here: two official series for the same quantity, figures that exist only in government statements, official data published as PDF tables, and source sites that refuse automated readers (four did during the checks).
+- **Impact.** The dataset can be used today by fact-checkers, journalists and tool builders. Every scored row links to its source, and the ten unchecked rows are open tasks.
+
+What it does not claim: nobody has adopted the dataset yet, and no tool has been deployed with it. It is the groundwork.
 
 ## Why this matters
 

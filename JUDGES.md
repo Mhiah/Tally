@@ -6,6 +6,10 @@ Tally lists every figure in five Nigerian national addresses (four by the Presid
 
 Track 4. The sprint brief suggests pairing quantitative claims with the statistical releases they cite, flagging mismatches with links, and publishing an auditable dataset. This is that, for a country current resources do not cover.
 
+## Track fit
+
+Track 4 is about deployment, adoption and impact. Tally is groundwork for deploying claim-checking tools in a setting they are rarely tested in. It includes a small deployment test (an off-the-shelf model as blind second coder, which missed one of the two "non-oil" label swaps), and it documents concrete barriers to adoption: conflicting official series, figures with no published source, and sources that block automated readers. The README has a section on this. Nothing has been adopted or deployed yet, and the project does not claim otherwise.
+
 ## Where things are
 
 | You want | Open |
