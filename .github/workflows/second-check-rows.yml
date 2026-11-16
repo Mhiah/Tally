@@ -1,0 +1,32 @@
+name: Second check, selected rows
+# Runs second_check.py on the row ids listed in NEW_ROWS and writes check/second_check_new_rows.json.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [NEW_ROWS]
+permissions:
+  contents: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pdfplumber
+      - run: python3 second_check.py $(cat NEW_ROWS)
+        env:
+          SERV_API_KEY: ${{ secrets.SERV_API_KEY }}
+          SECOND_OUT: check/second_check_new_rows.json
+      - name: Save results to the repo
+        if: always()
+        run: |
+          git config user.name "Mhiah"
+          git config user.email "192190660+Mhiah@users.noreply.github.com"
+          git add check
+          git diff --cached --quiet || git commit -m "check: second check on newly scored rows [skip ci]"
+          git pull --rebase
+          git push

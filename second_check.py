@@ -8,7 +8,8 @@ Two checks, both run from GitHub Actions so they do not depend on the first chec
    the downloaded source text only. It is not shown the first checker's verdict, official figure or notes.
    It returns its own verdict.
 
-Without SERV_API_KEY only the mechanical check runs. Output: check/second_check.json.
+Without SERV_API_KEY only the mechanical check runs. Output: check/second_check.json, or the path in SECOND_OUT.
+Row ids given as arguments limit the run to those rows.
 Needs Python 3 and pdfplumber (for the statistics bureau's PDF files).
 """
 import csv, io, json, os, re, sys, time, html, urllib.request
@@ -21,6 +22,11 @@ SCORED = ("match", "close", "mismatch")
 
 # Full sentence for rows whose `claim` cell is only a fragment. Taken from the speech texts.
 CONTEXT = {
+    "T25-16": "We have attained a record-breaking increase in non-oil revenue, achieving the 2025 target by August with over N20 trillion.",
+    "T25-17": "In September 2025 alone, we raised N3.65 trillion, 411 per cent higher than the amount raised in May 2023.",
+    "T25-20": "Our stock market's all-share index rose to 142,000 points on 26 September 2025. (Check the 26 September 2025 level only.)",
+    "T25-23": "Second-quarter 2025 growth of 4.23% outpaced the 3.4 per cent projected by the IMF.",
+    "T25-26": "Households in the cash transfer programme are to receive three tranches of N25,000 each.",
     "T25-07": "Oil production rebounded to 1.68 million barrels per day from barely one million in May 2023.",
     "T25-09": "Approximately 510,000 students have benefited from the student loan fund, covering 228 higher institutions.",
     "T25-10": "As of September 10, the total [student] loan disbursed was N99.5 billion.",
@@ -131,7 +137,7 @@ def main():
             res["second"] = ask(user)
         results.append(res); print(res["id"], res["first_verdict"], "| numbers in source:", res["all_numbers_in_source"], "| second:", res.get("second", {}).get("verdict"), flush=True)
     os.makedirs("check", exist_ok=True)
-    json.dump({"model": MODEL if KEY else None, "rows": results}, open("check/second_check.json", "w"), indent=1)
+    json.dump({"model": MODEL if KEY else None, "rows": results}, open(os.environ.get("SECOND_OUT", "check/second_check.json"), "w"), indent=1)
 
 if __name__ == "__main__":
     main()
