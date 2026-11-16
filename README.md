@@ -9,6 +9,8 @@ Apart Research AI x Epistemics Research Sprint, 13 to 15 November 2026. Track 4 
 | Report | [`report/Tally-report.pdf`](report/Tally-report.pdf) |
 | Dataset | [`data/claims.csv`](data/claims.csv) |
 | Guide for judges | [`JUDGES.md`](JUDGES.md) |
+| Slides | [`slides/Tally-slides.pdf`](slides/Tally-slides.pdf) |
+| Presentation (2.5 minutes, narrated) | [`slides/Tally-presentation.mp4`](slides/Tally-presentation.mp4) |
 | Second-check results | [`check/second_check.json`](check/second_check.json) |
 | Checking log | [`notes.md`](notes.md) |
 
@@ -126,6 +128,7 @@ It prints the counts and the agreement figures and rewrites `data/summary.json`.
 | `report/Tally-report.pdf` | The report |
 | `report/report.tex` | Report source |
 | `JUDGES.md` | Where to look, claim by claim, and the weakest points |
+| `slides/` | Slides, the narrated presentation, and the narration script |
 
 ## Dataset columns
 
@@ -167,7 +170,7 @@ This is a starting dataset, not a fact-check of record. Re-check a row before re
 
 ## AI assistance and prior work
 
-An AI assistant (Claude, Anthropic) did the web research, checking, analysis and drafting, under the author's direction. A second model (gpt-5.4-mini) was used only as the blind second coder. Nothing in this repository existed before the sprint.
+An AI assistant (Claude, Anthropic) did the web research, checking, analysis and drafting, under the author's direction. A second model (gpt-5.4-mini) was used only as the blind second coder. The presentation is narrated with a synthetic voice (Kokoro). Nothing in this repository existed before the sprint.
 
 ## Author
 

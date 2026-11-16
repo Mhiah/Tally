@@ -11,6 +11,7 @@ Track 4. The sprint brief suggests pairing quantitative claims with the statisti
 | You want | Open |
 |---|---|
 | The report | `report/Tally-report.pdf` |
+| Slides and a 2.5 minute narrated presentation | `slides/` |
 | The data | `data/claims.csv` |
 | The numbers in the report | `data/summary.json`, made by `python3 analyze.py` |
 | The working log | `notes.md` |
