@@ -1,0 +1,375 @@
+{
+ "model": "gpt-5.4-mini",
+ "rows": [
+  {
+   "id": "T25-16",
+   "speaker": "Bola Tinubu",
+   "first_verdict": "mismatch",
+   "sources": [
+    {
+     "url": "https://www.thecable.ng/presidency-non-oil-sector-accounted-for-n15trn-out-of-n20trn-revenue-generated-in-eight-months",
+     "ok": true,
+     "kind": "html",
+     "chars": 4699
+    },
+    {
+     "url": "https://arbiterz.com/?p=50032",
+     "ok": true,
+     "kind": "html",
+     "chars": 6578
+    }
+   ],
+   "official_numbers": {
+    "20.59": true,
+    "15.69": true
+   },
+   "all_numbers_in_source": true,
+   "any_source_ok": true,
+   "second": {
+    "verdict": "match",
+    "source_figure": "Between January and August 2025, total collections reached N20.59 trillion, with non-oil sector accounting for N15.69 trillion.",
+    "reason": "The source says Nigeria generated N20.59 trillion from January to August 2025 and that non-oil revenues were N15.69 trillion. That supports the claim that the 2025 target was achieved by August with over N20 trillion, and the non-oil revenue increase is consistent with the source.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
+  },
+  {
+   "id": "T25-17",
+   "speaker": "Bola Tinubu",
+   "first_verdict": "match",
+   "sources": [
+    {
+     "url": "https://nairametrics.com/2025/09/24/nigerias-monthly-revenue-hits-n3-65-trillion-in-sept-2025-up-411/",
+     "ok": true,
+     "kind": "html",
+     "chars": 5931
+    }
+   ],
+   "official_numbers": {
+    "3.64": false,
+    "3.65": true,
+    "711": true,
+    "411": true
+   },
+   "all_numbers_in_source": false,
+   "any_source_ok": true,
+   "second": {
+    "verdict": "match",
+    "source_figure": "N3.65 trillion in September 2025; 411% increase from N711 billion in May 2023",
+    "reason": "The source states that federal revenue in September 2025 was N3.65 trillion and that this was a 411% increase from May 2023. That directly matches the claim.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
+  },
+  {
+   "id": "T25-18",
+   "speaker": "Bola Tinubu",
+   "first_verdict": "match",
+   "sources": [
+    {
+     "url": "https://nairametrics.com/2025/09/22/top-10-fastest-growing-sectors-in-nigeria-in-q2-2025/",
+     "ok": true,
+     "kind": "html",
+     "chars": 7433
+    }
+   ],
+   "official_numbers": {
+    "22.28": true,
+    "57.53": true
+   },
+   "all_numbers_in_source": true,
+   "any_source_ok": true,
+   "second": {
+    "source_figure": "Coal Mining \u2013 57.53% Growth (Q2 2025); Q1 was -22.28%",
+    "verdict": "close",
+    "reason": "The source says coal mining grew 57.53% in Q2 2025 and had a -22.28% contraction in Q1 2025. The claim\u2019s Q2 figure is essentially the same, and the Q1 decline is rounded from -22.28% to 22%.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
+  },
+  {
+   "id": "T25-19",
+   "speaker": "Bola Tinubu",
+   "first_verdict": "match",
+   "sources": [
+    {
+     "url": "https://nairametrics.com/2025/09/22/top-10-fastest-growing-sectors-in-nigeria-in-q2-2025/",
+     "ok": true,
+     "kind": "html",
+     "chars": 7433
+    }
+   ],
+   "official_numbers": {
+    "43.08": true,
+    "27.90": true
+   },
+   "all_numbers_in_source": true,
+   "any_source_ok": true,
+   "second": {
+    "source_figure": "Water Transport: 27.90%; Rail Transport & Pipelines: 43.08%",
+    "verdict": "match",
+    "reason": "The source reports Water Transport growth at 27.90% and Rail Transport & Pipelines growth at 43.08% in Q2 2025. The claim that they grew by over 27% and over 40% is consistent with those figures.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
+  },
+  {
+   "id": "T25-20",
+   "speaker": "Bola Tinubu",
+   "first_verdict": "match",
+   "sources": [
+    {
+     "url": "https://investorsking.com/2025/09/29/ngx-closes-week-positive-as-asi-gains-0-20-market-cap-hits-%e2%82%a689-96-trillion/",
+     "ok": true,
+     "kind": "html",
+     "chars": 4651
+    }
+   ],
+   "official_numbers": {
+    "142,133.03": true
+   },
+   "all_numbers_in_source": true,
+   "any_source_ok": true,
+   "second": {
+    "source_figure": "142,133.03 points",
+    "verdict": "mismatch",
+    "reason": "The source says the All-Share Index closed on 26 September 2025 at 142,133.03 points. The claim\u2019s 142,000 figure is close in a rounded sense, but it is not the exact level stated in the source.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
+  },
+  {
+   "id": "T25-21",
+   "speaker": "Bola Tinubu",
+   "first_verdict": "match",
+   "sources": [
+    {
+     "url": "https://www.arise.tv/fg-disburses-n330-billion-to-8-5-million-poor-households-under-conditional-cash-transfer-scheme",
+     "ok": true,
+     "kind": "html",
+     "chars": 6954
+    }
+   ],
+   "official_numbers": {
+    "330": true,
+    "8.1": true,
+    "8.5": true
+   },
+   "all_numbers_in_source": true,
+   "any_source_ok": true,
+   "second": {
+    "verdict": "close",
+    "source_figure": "N330 billion disbursed to 8.5 million poor households",
+    "reason": "The source says the federal government had so far disbursed N330 billion to 8.5 million poor households. The claim\u2019s amount matches, but the household count is slightly lower at eight million, which is a small rounding-level difference.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
+  },
+  {
+   "id": "T25-23",
+   "speaker": "Bola Tinubu",
+   "first_verdict": "match",
+   "sources": [
+    {
+     "url": "https://guardian.ng/news/nigerias-economy-posts-4-23-growth-in-q2-outperforms-projections/",
+     "ok": true,
+     "kind": "html",
+     "chars": 4957
+    }
+   ],
+   "official_numbers": {
+    "3.4": true
+   },
+   "all_numbers_in_source": true,
+   "any_source_ok": true,
+   "second": {
+    "verdict": "match",
+    "source_figure": "Q2 2025 GDP growth was 4.23%, and the IMF\u2019s July 2025 projection was 3.4%",
+    "reason": "The source explicitly says Nigeria\u2019s GDP grew by 4.23% in the second quarter of 2025 and that this was higher than the IMF\u2019s 3.4% 2025 projection. That directly supports the claim.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
+  },
+  {
+   "id": "TB-08",
+   "speaker": "Bola Tinubu",
+   "first_verdict": "match",
+   "sources": [
+    {
+     "url": "https://businessday.ng/?p=1142569",
+     "ok": true,
+     "kind": "html",
+     "chars": 5096
+    }
+   ],
+   "official_numbers": {
+    "18.6": true,
+    "30.6": true
+   },
+   "all_numbers_in_source": true,
+   "any_source_ok": true,
+   "second": {
+    "source_figure": "N18.6 trillion gross revenue in the first nine months of 2025; the article also says this was 61% of the target",
+    "verdict": "match",
+    "reason": "The source explicitly states that the government\u2019s gross revenue was N18.6 trillion in the period January to September 2025 and that this represented 61% of the target. This aligns with the claim.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
+  },
+  {
+   "id": "TB-09",
+   "speaker": "Bola Tinubu",
+   "first_verdict": "match",
+   "sources": [
+    {
+     "url": "https://kolaking.substack.com/p/fg-debt-repayments-exceed-budget",
+     "ok": false,
+     "kind": "HTTPError: HTTP Error 403: Forbidden",
+     "chars": 0
+    }
+   ],
+   "official_numbers": {
+    "24.66": false,
+    "41.24": false
+   },
+   "all_numbers_in_source": false,
+   "any_source_ok": false
+  },
+  {
+   "id": "TN-05",
+   "speaker": "Bola Tinubu",
+   "first_verdict": "match",
+   "sources": [
+    {
+     "url": "https://www.channelstv.com/?p=991538",
+     "ok": true,
+     "kind": "html",
+     "chars": 12924
+    }
+   ],
+   "official_numbers": {
+    "45.45": true
+   },
+   "all_numbers_in_source": true,
+   "any_source_ok": true,
+   "second": {
+    "verdict": "match",
+    "source_figure": "$45.45 billion",
+    "reason": "The source says Nigeria\u2019s external reserves as of Monday, 29 December 2025, stood at $45.45bn. The claim of $45.4 billion is a rounding of that figure.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
+  },
+  {
+   "id": "A26-08",
+   "speaker": "Atiku Abubakar",
+   "first_verdict": "match",
+   "sources": [
+    {
+     "url": "https://nairametrics.com/2026/09/28/fg-engages-world-bank-for-fresh-1-5-billion-loans/",
+     "ok": true,
+     "kind": "html",
+     "chars": 6795
+    }
+   ],
+   "official_numbers": {
+    "1.5": true
+   },
+   "all_numbers_in_source": true,
+   "any_source_ok": true,
+   "second": {
+    "verdict": "match",
+    "source_figure": "$1.5 billion in fresh financing from the World Bank through three proposed loans",
+    "reason": "The source says the Federal Government is seeking $1.5 billion in fresh World Bank financing in September 2026. It also notes these are proposed loans not yet approved, which fits the claim that the government is discussing another $1.5 billion in World Bank loans.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
+  },
+  {
+   "id": "T25-24",
+   "speaker": "Bola Tinubu",
+   "first_verdict": "match",
+   "sources": [
+    {
+     "url": "https://businessday.ng/?p=1024494",
+     "ok": true,
+     "kind": "html",
+     "chars": 3797
+    }
+   ],
+   "official_numbers": {
+    "4.23": true
+   },
+   "all_numbers_in_source": true,
+   "any_source_ok": true,
+   "second": {
+    "source_figure": "Nigeria\u2019s real GDP grew by 4.23% in Q2 2025, its highest quarterly growth rate since Q2 2021.",
+    "verdict": "match",
+    "reason": "The source explicitly says Q2 2025 was Nigeria\u2019s highest quarterly growth rate since Q2 2021, which is four years earlier. That supports the claim that growth was at Nigeria\u2019s fastest pace in four years.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
+  },
+  {
+   "id": "T25-25",
+   "speaker": "Bola Tinubu",
+   "first_verdict": "match",
+   "sources": [
+    {
+     "url": "https://breezynewsnigeria.com/?p=128359",
+     "ok": true,
+     "kind": "html",
+     "chars": 4354
+    }
+   ],
+   "official_numbers": {
+    "7.46": true
+   },
+   "all_numbers_in_source": true,
+   "any_source_ok": true,
+   "second": {
+    "source_figure": "Q2 2025 trade surplus of N7.46 trillion, described as the highest in almost three years",
+    "verdict": "match",
+    "reason": "The source explicitly says Q2 2025 delivered the highest surplus in almost three years at N7.46 trillion. That directly supports the claim that the trade surplus was the largest in about three years.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
+  },
+  {
+   "id": "T25-26",
+   "speaker": "Bola Tinubu",
+   "first_verdict": "match",
+   "sources": [
+    {
+     "url": "https://www.arise.tv/fg-disburses-n330-billion-to-8-5-million-poor-households-under-conditional-cash-transfer-scheme",
+     "ok": true,
+     "kind": "html",
+     "chars": 6954
+    }
+   ],
+   "official_numbers": {
+    "25,000": true
+   },
+   "all_numbers_in_source": true,
+   "any_source_ok": true,
+   "second": {
+    "verdict": "match",
+    "source_figure": "three instalments/tranches of N25,000 each",
+    "reason": "The source says the conditional cash transfer programme was designed for 15 million poor households at three instalments of N25,000 each. It also says some households have already received one, two, or three tranches.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
+  },
+  {
+   "id": "T25-27",
+   "speaker": "Bola Tinubu",
+   "first_verdict": "match",
+   "sources": [
+    {
+     "url": "https://dailytrust.com/inflation-decline-fx-stability-behind-cbns-rates-cut/",
+     "ok": true,
+     "kind": "html",
+     "chars": 13227
+    }
+   ],
+   "official_numbers": {
+    "27.5": true
+   },
+   "all_numbers_in_source": true,
+   "any_source_ok": true,
+   "second": {
+    "verdict": "match",
+    "source_figure": "The CBN reduced the benchmark interest rate by 50 basis points from 27.5% to 27.0% on September 22\u201323, 2025, and the source says this was the first reduction in five years (last cut was September 2020).",
+    "reason": "The claim that interest rates were cut for the first time in five years is directly supported by the source. It explicitly states the reduction was the first under Cardoso\u2019s leadership and the first in five years, with the previous cut in September 2020.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
+  }
+ ]
+}
