@@ -20,8 +20,8 @@ for i, (sp, d, label) in enumerate(speeches):
             ax.text(x + n / 2, y, str(n), ha="center", va="center", color=ink, fontsize=9, fontweight="bold"); x += n
     ax.text(-0.25, y, label, ha="right", va="center", fontsize=8.5, color="#0b0b0b")
 for j, (v, name, col, ink) in enumerate(V):
-    ax.barh(-1.05, 0.5, left=j * 2.6, height=0.3, color=col); ax.text(j * 2.6 + 0.65, -1.05, name, va="center", fontsize=8.5, color="#0b0b0b")
+    ax.barh(-1.05, 0.7, left=j * 5.0, height=0.3, color=col); ax.text(j * 5.0 + 0.95, -1.05, name, va="center", fontsize=8.5, color="#0b0b0b")
 ax.text(0, len(speeches) - 0.35, f"Figures checked against official releases, by speech ({n_scored} scored)", fontsize=9.5, fontweight="bold", color="#0b0b0b")
-ax.set_xlim(-0.2, 14); ax.set_ylim(-1.5, len(speeches)); ax.axis("off")
+ax.set_xlim(-0.2, 27); ax.set_ylim(-1.5, len(speeches)); ax.axis("off")
 fig.subplots_adjust(left=0.36, right=0.99, top=0.98, bottom=0.02)
 fig.savefig("report/figure1.png", facecolor=fig.get_facecolor()); fig.savefig("report/figure1.pdf", facecolor=fig.get_facecolor())

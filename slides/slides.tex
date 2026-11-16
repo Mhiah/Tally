@@ -20,6 +20,7 @@
 \setlength{\parskip}{6pt}
 \newcommand{\bignum}[1]{{\fontsize{30}{34}\selectfont\bfseries\color{accent}#1}}
 \newcommand{\sm}[1]{{\small\color{muted}#1}}
+\newcommand{\N}{N}
 \begin{document}
 
 \begin{frame}[plain]
@@ -46,21 +47,21 @@ For Nigeria, nobody has put the claims and the official figures side by side in 
 \vspace{0.1cm}
 \begin{itemize}\setlength{\itemsep}{7pt}
 \item Four by the President, one by the main opposition candidate
-\item \textbf{59} figures listed \textbullet\ \textbf{33} checked \textbullet\ \textbf{31} scored
-\item Checked against the statistics bureau, central bank, debt office and others
+\item \textbf{59} figures listed \textbullet\ \textbf{49} checked \textbullet\ \textbf{46} scored
+\item Checked against the statistics bureau, central bank, budget office and others
 \item Each row gets a verdict and a source link
 \end{itemize}
 \vspace{0.25cm}
 \sm{Match: agrees. Close: within roughly 10 to 15 per cent. Mismatch: materially different,\\ or a different quantity from the one named.}
 \end{frame}
 
-\begin{frame}{Result: about three in four matched}
+\begin{frame}{Result: four in five matched}
 \vspace{0.1cm}
 \begin{columns}[T]
 \begin{column}{0.30\textwidth}
-\bignum{23}\ \ match\\[0.25cm]
+\bignum{37}\ \ match\\[0.25cm]
 \bignum{5}\ \ close\\[0.25cm]
-\bignum{3}\ \ mismatch
+\bignum{4}\ \ mismatch
 \end{column}
 \begin{column}{0.68\textwidth}
 \includegraphics[width=\linewidth]{figure1.pdf}
@@ -70,7 +71,7 @@ For Nigeria, nobody has put the claims and the official figures side by side in 
 \sm{Every specific growth and inflation rate quoted in the five speeches matched exactly.}
 \end{frame}
 
-\begin{frame}{The biggest miss: a swapped definition}
+\begin{frame}{Biggest misses: ``non-oil'' with oil in it}
 \vspace{0.2cm}
 \textbf{Claim:} non-oil exports are now 48\% of exports.
 \vspace{0.3cm}
@@ -86,14 +87,16 @@ Other petroleum products and gas & 34.21\% \\
 \end{tabular}
 \vspace{0.35cm}
 
-The 48\% is everything except \emph{crude}. Most of it is still oil and gas.
+\sm{The 48\% is everything except \emph{crude}.}
+
+\textbf{Same speech:} non-oil revenue of ``over \N 20 trillion'' by August.\\ That was \emph{total} revenue. Non-oil was \textbf{\N 15.7 trillion}.
 \end{frame}
 
 \begin{frame}{How the other figures went wrong}
 \begin{itemize}\setlength{\itemsep}{8pt}
 \item \textbf{Out of date:} a stock market gain quoted from ten days earlier
 \item \textbf{Wrong baseline:} oil output ``from barely one million'' in May 2023. It was 1.18 million; the lower figure was April
-\item \textbf{Both directions:} of seven errors with a direction, four helped the speaker and three hurt
+\item \textbf{Both directions:} of eight errors with a direction, five helped the speaker and three hurt
 \end{itemize}
 \vspace{0.2cm}
 \textbf{Two claims fit no verdict.} Two official sources give different foreign investment figures. One debt ratio has no published source at all.
@@ -103,20 +106,20 @@ The 48\% is everything except \emph{crude}. Most of it is still oil and gas.
 \textbf{Two independent checks.}
 \vspace{0.1cm}
 \begin{itemize}\setlength{\itemsep}{8pt}
-\item \textbf{A script with no AI in it} found every recorded number in its source for 26 of 31 rows, and the quoted figures for the rest
-\item \textbf{A blind second coder}, a different AI model, gave the same verdict on 22 of 31
+\item \textbf{A script with no AI in it} found every recorded number in its source for 39 of 46 rows, and the quoted figures in six more
+\item \textbf{A blind second coder}, a different AI model, gave the same verdict on 32 of 45
 \end{itemize}
 \vspace{0.2cm}
-\bignum{74\%}\ \ vs\ \ \bignum{71\%}\ \ \sm{match rate, first and second checker}
+\bignum{80\%}\ \ vs\ \ \bignum{73\%}\ \ \sm{match rate, first and second checker}
 
-\sm{The match rate holds. The line between close and mismatch does not, so the eight non-matching rows are best read as one group.}
+\sm{Most figures match under either checker. Single verdicts near the boundaries are less reliable, and the second coder disputed the revenue finding.}
 \end{frame}
 
 \begin{frame}{What it is, and what it is not}
 \begin{itemize}\setlength{\itemsep}{8pt}
 \item An open dataset with a source link on every scored row
 \item A small test set for claim-checking tools in a setting they rarely see
-\item \textbf{Small:} 31 scored figures, 26 still unchecked
+\item \textbf{Small:} 46 scored figures, 10 still unchecked
 \item \textbf{No human checker}, and mostly press reports of official releases
 \item Not a comparison of the two speakers, and not a fact-check of record
 \end{itemize}

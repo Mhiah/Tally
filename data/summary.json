@@ -1,64 +1,63 @@
 {
  "figures_listed": 59,
  "verdicts": {
-  "match": 23,
-  "mismatch": 3,
+  "match": 37,
+  "mismatch": 4,
   "close": 5,
-  "unverifiable": 1,
+  "unverifiable": 2,
   "forecast": 1,
-  "not checked": 26
+  "not checked": 10
  },
- "scored": 31,
+ "scored": 46,
  "scored_share": {
-  "match": 74.2,
-  "close": 16.1,
-  "mismatch": 9.7
+  "match": 80.4,
+  "close": 10.9,
+  "mismatch": 8.7
  },
  "by_speaker": {
   "Atiku Abubakar": {
-   "match": 3,
+   "match": 4,
    "close": 2,
-   "not checked": 6
+   "not checked": 5
   },
   "Bola Tinubu": {
-   "match": 20,
-   "mismatch": 3,
+   "match": 33,
+   "mismatch": 4,
    "close": 3,
-   "unverifiable": 1,
+   "unverifiable": 2,
    "forecast": 1,
-   "not checked": 20
+   "not checked": 5
   }
  },
  "by_speech": {
   "Bola Tinubu | Independence Day broadcast | 2025-10-01": {
-   "match": 10,
-   "mismatch": 2,
+   "match": 20,
+   "mismatch": 3,
    "close": 2,
-   "unverifiable": 1,
-   "not checked": 15
+   "unverifiable": 2,
+   "not checked": 3
   },
   "Bola Tinubu | 2026 budget speech | 2025-12-19": {
-   "match": 6,
+   "match": 8,
    "mismatch": 1,
-   "not checked": 4
+   "not checked": 2
   },
   "Bola Tinubu | New Year message | 2026-01-01": {
-   "match": 2,
+   "match": 3,
    "close": 1,
-   "forecast": 1,
-   "not checked": 1
+   "forecast": 1
   },
   "Bola Tinubu | Independence Day address | 2026-10-01": {
    "match": 2
   },
   "Atiku Abubakar | Independence Day address | 2026-10-01": {
-   "match": 3,
+   "match": 4,
    "close": 2,
-   "not checked": 6
+   "not checked": 5
   }
  },
  "error_types": {
-  "definition": 1,
+  "definition": 2,
   "baseline period": 1,
   "rounding or transcription": 1,
   "baseline understated": 2,
@@ -66,7 +65,7 @@
   "official month not located": 1
  },
  "direction_of_errors": {
-  "favourable": 4,
+  "favourable": 5,
   "unfavourable": 3
  },
  "direction_by_speaker": {
@@ -74,23 +73,23 @@
    "favourable": 1
   },
   "Bola Tinubu": {
-   "favourable": 3,
+   "favourable": 4,
    "unfavourable": 3
   }
  },
  "source_types_for_scored": {
-  "press report of official release": 26,
+  "press report of official release": 41,
   "independent secondary source": 2,
   "primary document": 3
  },
  "second_coder": {
   "model": "gpt-5.4-mini-2026-03-17",
-  "rows": 31,
-  "same_verdict": 22,
-  "same_verdict_share": 71.0,
-  "cohens_kappa": 0.34,
-  "same_on_match_vs_not": 26,
-  "same_on_match_vs_not_share": 83.9,
+  "rows": 45,
+  "same_verdict": 32,
+  "same_verdict_share": 71.1,
+  "cohens_kappa": 0.26,
+  "same_on_match_vs_not": 36,
+  "same_on_match_vs_not_share": 80.0,
   "disagreements": {
    "T25-07": [
     "mismatch",
@@ -127,18 +126,34 @@
    "A26-05": [
     "close",
     "mismatch"
+   ],
+   "T25-16": [
+    "mismatch",
+    "match"
+   ],
+   "T25-18": [
+    "match",
+    "close"
+   ],
+   "T25-20": [
+    "match",
+    "mismatch"
+   ],
+   "T25-21": [
+    "match",
+    "close"
    ]
   },
   "second_coder_counts": {
-   "match": 22,
-   "mismatch": 6,
-   "close": 2,
+   "match": 33,
+   "mismatch": 7,
+   "close": 4,
    "not_in_source": 1
   }
  },
  "mechanical_check": {
-  "rows": 31,
-  "a_source_opened": 31,
-  "all_recorded_numbers_found": 26
+  "rows": 46,
+  "a_source_opened": 45,
+  "all_recorded_numbers_found": 39
  }
 }

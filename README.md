@@ -10,26 +10,28 @@ Apart Research AI x Epistemics Research Sprint, 13 to 15 November 2026. Track 4 
 | Dataset | [`data/claims.csv`](data/claims.csv) |
 | Guide for judges | [`JUDGES.md`](JUDGES.md) |
 | Slides | [`slides/Tally-slides.pdf`](slides/Tally-slides.pdf) |
-| Presentation (2.5 minutes, narrated) | [`slides/Tally-presentation.mp4`](slides/Tally-presentation.mp4) |
+| Presentation (under 3 minutes, narrated) | [`slides/Tally-presentation.mp4`](slides/Tally-presentation.mp4) |
 | Second-check results | [`check/second_check.json`](check/second_check.json) |
 | Checking log | [`notes.md`](notes.md) |
 
 ## Summary
 
-Five national addresses were chosen before any checking: four by President Bola Tinubu and one by opposition candidate Atiku Abubakar. The figures in them were listed (59). 33 were checked against releases from Nigeria's statistics bureau, central bank, debt office and other official bodies, and 31 could be scored.
+Five national addresses were chosen before any checking: four by President Bola Tinubu and one by opposition candidate Atiku Abubakar. The figures in them were listed (59). 49 were checked against releases from Nigeria's statistics bureau, central bank, budget office and other official bodies, and 46 could be scored.
 
-| Verdict | Count | Share of the 31 scored |
+| Verdict | Count | Share of the 46 scored |
 |---|---|---|
-| Match | 23 | 74% |
-| Close | 5 | 16% |
-| Mismatch | 3 | 10% |
+| Match | 37 | 80% |
+| Close | 5 | 11% |
+| Mismatch | 4 | 9% |
 
 The dataset was then tested twice by means that do not depend on the first checker:
 
 - A script with no AI in it downloaded every source and looked for the recorded official numbers on the page.
-- A different AI model coded all 31 rows blind, seeing only the claim and the source text.
+- A different AI model coded the scored rows blind, seeing only the claim and the source text.
 
-The blind second coder found a match rate of 71% against 74%, and gave the same verdict on 22 of 31 rows. So the headline holds under a second checker. The exact line between "close" and "mismatch" does not, and the report says so.
+The blind second coder found a match rate of 73% against 80%, and gave the same verdict on 32 of 45 rows. So the broad result holds under a second checker: most figures match. Individual verdicts near the category boundaries are less reliable, and the second coder disagreed on one of the two headline findings. The report says so.
+
+The two most consequential errors are in the same speech and both attach the label "non-oil" to a figure that includes oil.
 
 ## Why this matters
 
@@ -43,11 +45,12 @@ That gap matters for AI. Tools that check claims automatically are built and tes
 
 **Headline figures were accurate.** Every specific quarterly growth rate and monthly inflation rate quoted in the five speeches matched the statistics bureau exactly.
 
-**Eight figures did not match exactly.** Three mismatches and five close calls:
+**Nine figures did not match exactly.** Four mismatches and five close calls:
 
 | Row | Claim | Official figure | Verdict | What went wrong |
 |---|---|---|---|---|
 | `T25-05` | Non-oil exports are 48% of exports | Crude 52.60%. Non-crude 47.40%, of which petroleum products and gas 34.21% and non-oil 13.39% | mismatch | A definition was swapped. The 48% is the non-crude share |
+| `T25-16` | Non-oil revenue target met "by August with over N20 trillion" | Total collections N20.59 trillion, of which non-oil N15.69 trillion | mismatch (contested) | A definition was swapped. The N20 trillion is total revenue, oil included |
 | `T25-07` | Oil output rose from "barely one million" barrels a day in May 2023 | 1,183,691 in May 2023. 998,602 was April | mismatch (contested) | The baseline belongs to the month before |
 | `TB-06` | Over 418,000 students supported by the loan fund | 510,378 already reported in September | mismatch | Out of date |
 | `TN-02` | The stock market gained 48.12% in 2025 | 51.19% for the full year | close | Out of date by ten days |
@@ -56,7 +59,9 @@ That gap matters for AI. Tools that check claims automatically are built and tes
 | `A26-05` | A sliced loaf was "about N500" in April 2023 | N577.41 | close | Baseline understated |
 | `A26-03` | N70,000 "buys just 50 litres" of petrol | 44 litres at the latest official price found; 48 to 50 at pump prices reported the month before | close | Official figure for the month not found |
 
-**The errors ran both ways.** Seven of the eight have a clear direction. Four helped the speaker's argument and three hurt it. The biggest single error, the non-oil exports definition, helped. Seven cases are too few to say anything about intent, and the report does not.
+**The errors ran both ways.** Eight of the nine have a clear direction. Five helped the speaker's argument and three hurt it. The two biggest errors, both "non-oil" definitions, helped. Eight cases are too few to say anything about intent, and the report does not.
+
+**More checking did not find more errors.** The first 33 figures checked were the most prominent ones and 74% matched. The next 16 produced fourteen matches, one mismatch and one unverifiable figure.
 
 **Two claims do not fit match or mismatch.**
 
@@ -71,16 +76,17 @@ The two speakers should not be compared from these counts. One gave four speeche
 |---|---|---|
 | Speeches re-read from scratch | First checker | 8 missed figures added. Two verdicts revised |
 | Every source re-opened | First checker | All verdicts held. 8 rows had a figure or link corrected |
-| Numbers on the page | Script, no AI, clean GitHub machine | A source opened for all 31 rows. Every recorded number found in 26. In the other 5 the quoted figures were found; the missing items were the checker's own arithmetic, a number written in another form, or a non-numeric figure |
-| Blind second coder | Different AI model (gpt-5.4-mini through SERV Reasoning) | Same verdict on 22 of 31 (71%, Cohen's kappa 0.34). Same on match versus not on 26 of 31 (84%) |
+| Numbers on the page | Script, no AI, clean GitHub machine | A source opened for 45 of 46 rows; one site refuses automated readers. Every recorded number found in 39. In 6 others the quoted figures were found; the missing items were the checker's own arithmetic, a number written in another form, or a non-numeric figure |
+| Blind second coder | Different AI model (gpt-5.4-mini through SERV Reasoning) | Same verdict on 32 of 45 (71%, Cohen's kappa 0.26). Same on match versus not on 36 of 45 (80%) |
+| Second round of checking | First checker | 16 more figures: 14 match, 1 mismatch, 1 unverifiable |
 
 What the second coder changed:
 
 - One verdict moved from mismatch to close (`TN-02`), because the first checker had not applied its own 10% threshold.
 - Two April 2023 prices the first checker had failed to find were located (`A26-04`, `A26-05`).
-- One verdict is contested (`T25-07`). The second coder read "barely one million" as fair for 1.18 million. It stays a mismatch here and the row says it is contested.
+- Two verdicts are contested. On `T25-07` the second coder read "barely one million" as fair for 1.18 million. On `T25-16` it recorded both revenue figures correctly and still returned a match. Both stay mismatches here and both rows say they are contested.
 
-All nine disagreements are in Appendix B of the report, each with what was done about it.
+All thirteen disagreements are in Appendix B of the report, each with what was done about it.
 
 What these checks do not cover: the second coder read the sources the first checker chose, so the choice of source was not tested. No person verified the rows.
 
@@ -102,7 +108,7 @@ What these checks do not cover: the second coder read the sources the first chec
 
 ## Check it yourself
 
-**In two minutes.** Open `data/claims.csv`, pick any scored row, open its `source_url`, and compare. Good rows to start with: `T25-05` (the main finding), `T25-07` (the contested one), `TN-03` (two official sources that disagree).
+**In two minutes.** Open `data/claims.csv`, pick any scored row, open its `source_url`, and compare. Good rows to start with: `T25-05` and `T25-16` (the two "non-oil" findings), `T25-07` (a contested one), `TN-03` (two official sources that disagree).
 
 **Reproduce every number in the report.** Python 3, nothing to install:
 
@@ -122,7 +128,7 @@ It prints the counts and the agreement figures and rewrites `data/summary.json`.
 | `data/summary.json` | Every count used in the report |
 | `analyze.py` | Computes the counts and the agreement figures |
 | `second_check.py` | The two independent checks |
-| `check/second_check.json` | Their raw output, including the second coder's reason on every row |
+| `check/second_check.json`, `check/second_check_new_rows.json` | Their raw output, including the second coder's reason on every row |
 | `figure.py` | Draws the chart from the dataset |
 | `notes.md` | The checking log, including what each pass changed |
 | `report/Tally-report.pdf` | The report |
@@ -150,11 +156,12 @@ It prints the counts and the agreement figures and rewrites `data/summary.json`.
 
 ## Limits
 
-- **Small.** Five speeches, 31 scored figures, 26 unchecked.
-- **Not a random sample.** The most prominent figures were checked first. The 74% applies to the checked figures only.
-- **No human checker.** Both checkers are AI models. Their agreement was only fair (kappa 0.34). Five of the nine disagreements sit on the edges of the close category. Read the eight rows that did not match exactly as one group.
+- **Small.** Five speeches, 46 scored figures, 10 unchecked.
+- **Not a random sample.** The most prominent figures were checked first. The 80% applies to the checked figures only.
+- **No human checker.** Both checkers are AI models. Their agreement was low (kappa 0.26). Eight of the thirteen disagreements sit on the edges of the close category. Read the nine rows that did not match exactly as one group.
 - **Source choice was not independently tested.** The second coder read the sources the first checker picked.
-- **Mostly secondary sources.** 3 scored figures were read from the statistics bureau's own document. 26 rely on press reports quoting the official release and 2 on independent secondary sources.
+- **Mostly secondary sources.** 3 scored figures were read from the statistics bureau's own document. 41 rely on press reports quoting the official release and 2 on independent secondary sources.
+- **Some figures have one possible source.** For revenue, cash transfers and budget performance, the agency that produces the number is the only source. A match there means the speech agrees with the agency.
 - **Two verdicts rest on arithmetic, not a quoted figure.** The 44.3% rise in the trade surplus was recomputed from the report's own numbers. "Over 4 per cent" growth in 2026 uses two official quarterly rates whose average is not an official figure.
 - **The list may be incomplete.** The first pass missed eight figures.
 - **Official figures are the reference, not the truth.** They can be wrong or revised, and several series were rebased during the period.
@@ -164,7 +171,7 @@ This is a starting dataset, not a fact-check of record. Re-check a row before re
 ## How to extend it
 
 - Have a person verify each verdict.
-- Check the 26 rows marked `not checked`.
+- Check the 10 rows marked `not checked`.
 - Replace press links with the primary release where one is online.
 - Add speeches and speakers using the same procedure.
 

@@ -20,7 +20,10 @@ for k in out["by_speech"]:
 # Agreement with the blind second coder (check/second_check.json), using the verdicts as they stood when it ran.
 import os
 if os.path.exists("check/second_check.json"):
-    sc = [r for r in json.load(open("check/second_check.json"))["rows"] if "second" in r]
+    allrows = json.load(open("check/second_check.json"))["rows"]
+    if os.path.exists("check/second_check_new_rows.json"):
+        allrows += json.load(open("check/second_check_new_rows.json"))["rows"]
+    sc = [r for r in allrows if "second" in r]
     pairs = [(r["first_verdict"], r["second"]["verdict"]) for r in sc]
     n = len(pairs); agree = sum(a == b for a, b in pairs)
     cats = sorted(set(x for p in pairs for x in p))
@@ -30,7 +33,7 @@ if os.path.exists("check/second_check.json"):
         "cohens_kappa": round((agree / n - pe) / (1 - pe), 2), "same_on_match_vs_not": binary, "same_on_match_vs_not_share": round(100 * binary / n, 1),
         "disagreements": {r["id"]: [r["first_verdict"], r["second"]["verdict"]] for r in sc if r["first_verdict"] != r["second"]["verdict"]},
         "second_coder_counts": dict(collections.Counter(b for _, b in pairs))}
-    mech = json.load(open("check/second_check.json"))["rows"]
+    mech = allrows
     out["mechanical_check"] = {"rows": len(mech), "a_source_opened": sum(r["any_source_ok"] for r in mech), "all_recorded_numbers_found": sum(r["all_numbers_in_source"] for r in mech)}
 json.dump(out, open("data/summary.json", "w"), indent=1)
 print(json.dumps(out, indent=1))

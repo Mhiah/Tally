@@ -69,3 +69,17 @@ gpt-5.4-mini via SERV, shown claim + downloaded source text only. Same verdict o
 - A26-04, A26-05: April 2023 figures (egg N88.17, bread N577.41) are in the comparison column of the May 2023 report. Found by the second coder.
 - T25-07 contested: second coder accepts "barely one million" for 1.18m. Kept mismatch (gap over 15%, and the ~1.0m figure is April).
 - A26-02: second coder's label (mismatch) contradicts its own reason (118 litres, consistent). Kept match.
+
+## Second round of checking (16 Nov)
+16 previously unchecked figures checked. 14 match, 1 mismatch, 1 unverifiable.
+- T25-16 MISMATCH: "over N20 trillion" non-oil revenue by August. Presidency statement of 3 Sep 2025: total collections N20.59trn, non-oil N15.69trn. FIRS: N20.62trn total, N15.67trn non-oil.
+- T25-17 match: N3.65trn in Sept vs N711bn in May 2023 = +411% (FIRS chairman, 23 Sep 2025). Total revenue, not non-oil; announced before month end.
+- T25-18/19 match: coal -22.28% to +57.53%; rail 43.08%; water 27.90% (NBS Q2 2025 GDP).
+- T25-20 match: ASI 142,133.03 on 26 Sep 2025. Start point not checked.
+- T25-21, T25-26 match: N330bn to 8.1 to 8.5m households; three tranches of N25,000 (Finance Minister).
+- T25-22 unverifiable: Credicorp 153,000 / N30bn. Only the President's statement for that date.
+- T25-23 match: IMF July 2025 update, 3.4% for 2025. T25-24 match: fastest since Q2 2021. T25-25 match: largest surplus in almost three years. T25-27 match: first rate cut since Sept 2020.
+- TB-08, TB-09 match: N18.6trn revenue (61%), N24.66trn expenditure (60%) per Budget Office Q3 report.
+- TN-05 match: reserves $45.45bn on 29 Dec 2025. A26-08 match: $1.5bn World Bank proposals.
+- Left unchecked: trade surplus "five consecutive quarters" (later Presidency counts imply a longer streak; not resolved), inflation "lowest in three years", $3bn rail approval, two capital-release figures, egg and bread May 2026 (not found again), fees 400%, N75,000 to 10 million, N10,000 in Niger State.
+Second coder on 14 of the 15 new scored rows: 10 same. Disagreed on T25-16 (returned match while recording both figures), T25-18, T25-20, T25-21.
