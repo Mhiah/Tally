@@ -50,9 +50,10 @@ Each row has a `source_url`. Open it and compare.
 3. 28 of 31 scored figures rest on press reports of the official release or other secondary sources, not the primary document.
 4. Checked figures were prioritised by prominence, not sampled at random.
 5. The 26 unchecked rows carry no source link. The first extraction missed eight figures, so the list may still be incomplete. Two of them (`A26-06`, `A26-07`) were searched for and not found.
-6. Claim wording is sometimes an excerpt of the sentence, not the full sentence.
-7. Two verdicts rest on the checker's arithmetic from published figures (`T25-04`, `T26-01`). The rows say so.
-8. Two food-price rows (`A26-04`, `A26-05`) are bracketed by the months either side because the April 2023 table was not located.
+6. Source choice was not independently tested: the second coder read the sources the first checker picked.
+7. Claim wording is sometimes an excerpt of the sentence, not the full sentence.
+8. Two verdicts rest on the checker's arithmetic from published figures (`T25-04`, `T26-01`). The rows say so.
+9. The first checker failed to find two April 2023 prices (`A26-04`, `A26-05`). The second coder found them in the comparison column of the May 2023 report.
 
 ## Questions you might ask
 

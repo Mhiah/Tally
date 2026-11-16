@@ -27,7 +27,7 @@
 
 \begin{abstract}
 \noindent
-Tools that check public claims against official statistics need ground truth: claims paired with the release they cite and a verdict. The author found no open dataset of this kind for Nigeria and builds a first one. The figures in five scripted national addresses from October 2025 to October 2026 were listed: four by President Bola Tinubu and one by opposition candidate Atiku Abubakar. That gave 59 figures. Thirty-three were checked against releases from the statistics bureau, the central bank and other official bodies, and 31 could be scored. Of those, 23 matched the official figure (74\%), 5 were close (16\%) and 3 did not match (10\%). The errors were stale figures, misattributed baselines and one swapped definition: ``non-oil'' exports of 48\% that are mostly petroleum products and gas, where exports outside oil and gas were 13.4\%. Of seven errors with a clear direction, four favoured the speaker and three did not. Two independent checks were run. A script with no AI in it found the recorded official numbers in the cited sources for all 31 rows. A blind second coder, a different AI model shown only the claim and the source text, gave the same verdict on 22 of 31 rows (Cohen's $\kappa = 0.34$) and found a nearly identical match rate (71\%). The match rate is therefore robust, while the line between ``close'' and ``mismatch'' is not. The dataset is public, small, has no human second checker, and relies mostly on press reports of official releases.
+Tools that check public claims against official statistics need ground truth: claims paired with the release they cite and a verdict. No open dataset of this kind was found for Nigeria; this is a first one. The figures in five scripted national addresses from October 2025 to October 2026 were listed: four by President Bola Tinubu and one by opposition candidate Atiku Abubakar. That gave 59 figures. Thirty-three were checked against releases from the statistics bureau, the central bank and other official bodies, and 31 could be scored. Of those, 23 matched the official figure (74\%), 5 were close (16\%) and 3 did not match (10\%). The errors were stale figures, misattributed baselines and one swapped definition: ``non-oil'' exports of 48\% that are mostly petroleum products and gas, where exports outside oil and gas were 13.4\%. Of seven errors with a clear direction, four favoured the speaker and three did not. Two independent checks were run. A script with no AI in it found every recorded number in the cited source for 26 of 31 rows and the quoted figures for the rest. A blind second coder, a different AI model shown only the claim and the source text, gave the same verdict on 22 of 31 rows (Cohen's $\kappa = 0.34$) and found a nearly identical match rate (71\%). The match rate is therefore robust, while the line between ``close'' and ``mismatch'' is not. The dataset is public and small, has no human checker, and relies mostly on press reports.
 \end{abstract}
 
 \section{Introduction}
@@ -36,7 +36,7 @@ A large share of political argument is carried by numbers: growth, inflation, re
 
 This matters for AI. Systems that verify claims, and the benchmarks that test them, are built mostly on material from a few countries with accessible statistics and established fact-checking outlets. A model evaluated only there tells us little about how it will do where official figures are published as PDFs, where two agencies report different numbers for the same quantity, and where a claim may rest on a government statement with no release behind it. The sprint brief asks for exactly this: pair quantitative claims with the statistical releases they cite, flag mismatches with links, and publish an auditable dataset.
 
-This project does that for Nigeria, at small scale. Its contributions are: (i) an open dataset of 59 figures from five national addresses, 31 of them scored against official releases with a link on each; (ii) a typology of how the figures went wrong, drawn from the data; (iii) an observation, on a very small number of errors, that they ran in both directions; and (iv) two cases that a simple match/mismatch scheme cannot represent, which any automated checker will need to handle.
+This project does that for Nigeria, at small scale. Its contributions are: (i) an open dataset of 59 figures from five national addresses, 31 of them scored against official releases with a link on each; (ii) a typology of how the figures went wrong, drawn from the data; (iii) an observation, on a very small number of errors, that they ran in both directions; (iv) two cases that a simple match/mismatch scheme cannot represent, which any automated checker will need to handle; and (v) two independent checks of the dataset, including agreement with a blind second coder.
 
 \section{Related Work}
 
@@ -69,7 +69,7 @@ For each figure the checker looked for the official release it refers to: the Na
 
 Each error was also given a type, and a direction: \emph{favourable} if the error strengthens the speaker's argument and \emph{unfavourable} if it weakens it.
 
-Thirty-three figures were checked. Checking was prioritised by prominence (headline growth, inflation, reserves, trade and debt first), not sampled at random, so the match rate describes the checked figures and should not be read as the rate for all 59. The audit pass also revised two verdicts: a reserves figure stated as ``about US\$47 billion'' against an official \$46.7 billion was moved from close to match, and a petrol-price claim lost its direction label once pump prices from the month of the speech were found (Section~\ref{sec:both}).
+Thirty-three figures were checked. Checking was prioritised by prominence (headline growth, inflation, reserves, trade and debt first), not sampled at random, so the match rate describes the checked figures and should not be read as the rate for all 59. The audit pass also revised two verdicts: a reserves figure stated as ``about US\$47 billion'' against an official \$46.7 billion was moved from close to match, and a petrol-price claim lost its direction label once pump prices from the month of the speech were found (Section~\ref{sec:wrong}).
 
 Finally, the source link on every scored row was opened again and the figure read a second time. All 30 existing verdicts held. The pass corrected the recorded figure or the link on eight rows, confirmed one previously unchecked figure (a 173\% rise in manufactured exports, now the 31st scored row), and removed two details from row notes that could not be found again. Two scored rows rest on the checker's own arithmetic from published figures, not on a quoted official number: the 44.3\% rise in the trade surplus, and growth of ``over 4 per cent'' in 2026, where the two quarterly rates are official but their average is not. The log of this pass is in \texttt{notes.md}.
 
@@ -119,6 +119,7 @@ Total & 59 & 23 & 5 & 3 & 1 & 1 & 26 \\
 The two speakers cannot be compared from these counts. They gave different numbers of speeches, of different kinds, and different shares of their figures were checked.
 
 \subsection{How the figures went wrong}
+\label{sec:wrong}
 
 The three mismatches and five close calls fall into the following types.
 
@@ -135,7 +136,7 @@ The three mismatches and five close calls fall into the following types.
 \subsection{The errors ran in both directions}
 \label{sec:both}
 
-Seven of the eight errors have a clear direction. Four favoured the speaker's argument and three cut against it (President: 3 and 3; opposition: 1 and 0). The two groups differ in kind. The favourable errors are the larger ones: a swapped definition and three misattributed or understated baselines. The unfavourable ones are stale or mistranscribed figures that undersell the speaker's own record. Seven errors are far too few to support a claim about intent. The pattern is consistent with stale briefing notes and loose definitions, and it does not rule out selective framing where the favourable errors are concerned.
+Seven of the eight errors have a clear direction. Four favoured the speaker's argument and three cut against it (President: 3 and 3; opposition: 1 and 0). The two groups differ in kind more than in size. The favourable errors are a swapped definition, which is the largest error in the set, and three misattributed or understated baselines of 8 to 16 per cent. The unfavourable ones are stale or mistranscribed figures that undersell the speaker's own record, by 2, 6 and 18 per cent. Seven errors are far too few to support a claim about intent. The pattern is consistent with stale briefing notes and loose definitions, and it does not rule out selective framing where the favourable errors are concerned.
 
 \subsection{What the second coder found}
 \label{sec:second}
@@ -144,7 +145,7 @@ The second coder gave the same verdict as the first on 22 of 31 rows (71\%; Cohe
 
 Two things follow. First, the headline is robust: about three in four checked figures match, whichever checker is used, and both independently flagged the non-oil exports claim and the student-loan figure as mismatches. Second, the boundary between ``close'' and ``mismatch'' is not reliable. Four of the nine disagreements are rows the first checker called close and the second called mismatch. The eight rows that did not match exactly are best read as one group.
 
-The second check changed the dataset in three places. It showed that the stock-market figure (48.12\% against 51.19\%) is within the stated ten per cent threshold, so that row was moved from mismatch to close. It located the April 2023 food prices that the first checker had failed to find. And it contested the oil-baseline verdict, reading ``barely one million'' as a fair description of 1.18 million barrels a day; that row remains a mismatch here because the gap exceeds fifteen per cent and the figure near one million belongs to the previous month, but it is marked as contested.
+The second check changed the dataset in three places. It showed that the stock-market figure (48.12\% against 51.19\%) is within the stated ten per cent threshold, so that row was moved from mismatch to close. It located the April 2023 food prices that the first checker had failed to find. And it contested the oil-baseline verdict, reading ``barely one million'' as a fair description of 1.18 million barrels a day; that row remains a mismatch here because the gap is about sixteen per cent and the figure near one million belongs to the previous month, but it is marked as contested.
 
 \subsection{Two cases a match/mismatch scheme cannot hold}
 
@@ -162,7 +163,7 @@ The second check changed the dataset in three places. It showed that the stock-m
 
 \section{Conclusion}
 
-Across five Nigerian national addresses, 31 figures were scored against official releases. About three in four matched, a rate a blind second coder reproduced, and headline growth and inflation figures were quoted accurately every time. The errors that did occur were mostly stale figures, loose baselines and one swapped definition, and on the few cases available they ran in both directions, with the larger ones favouring the speaker. Two claims exposed limits in the idea of a single official number. The dataset is public, with a link on every scored row, so that each verdict can be checked.
+Across five Nigerian national addresses, 31 figures were scored against official releases. About three in four matched, a rate a blind second coder reproduced, and headline growth and inflation figures were quoted accurately every time. The errors that did occur were mostly stale figures, loose baselines and one swapped definition, and on the few cases available they ran in both directions. Two claims exposed limits in the idea of a single official number. The dataset is public, with a link on every scored row, so that each verdict can be checked.
 
 \begin{thebibliography}{9}\small
 \bibitem{vaintrob_gap} L. Vaintrob. The AI Adoption Gap. Forethought, 2025. \url{https://www.forethought.org/research/the-ai-adoption-gap}
@@ -194,7 +195,7 @@ Across five Nigerian national addresses, 31 figures were scored against official
 \begin{itemize}
 \item \textbf{Political use.} The dataset covers a sitting president and an opposition presidential candidate ahead of the 2027 election. It could be quoted selectively by either side. The safeguards are symmetry (one procedure for both), a visible denominator (all 59 figures are listed, including the unchecked ones) and the finding itself, which is that most checked figures matched and errors ran in both directions.
 \item \textbf{Named individuals.} The claims are public statements by public figures in their official capacity. No private information is used.
-\item \textbf{False authority.} A dataset with verdicts can look more settled than it is. This one was built in a weekend by an AI assistant and has not been independently re-checked. It should not be cited as a fact-check of record.
+\item \textbf{False authority.} A dataset with verdicts can look more settled than it is. This one was built in a weekend by an AI assistant and has been re-checked only by automated means, not by a person. It should not be cited as a fact-check of record.
 \item \textbf{Over-reading.} The results do not show that either speaker is more or less honest than the other, and they say nothing about claims that contain no figures.
 \end{itemize}
 
@@ -204,9 +205,9 @@ An AI assistant (Claude, Anthropic) did the web research, the checking, the anal
 
 \subsection*{Reproducibility}
 
-The second coder's verdicts and reasons are in \texttt{check/second\_check.json}; the agreement figures are computed by \texttt{analyze.py}.
 
-The dataset is \texttt{data/claims.csv} in the repository \cite{tally}. Every count in this report is produced by \texttt{analyze.py} from that file. The verification log kept during checking is \texttt{notes.md}.
+
+The dataset is \texttt{data/claims.csv} in the repository \cite{tally}. Every count in this report is produced by \texttt{analyze.py} from that file. The verification log kept during checking is \texttt{notes.md}. The second coder's verdicts and reasons are in \texttt{check/second\_check.json}; the agreement figures are computed by \texttt{analyze.py}.
 
 
 \section{Disagreements between the two checkers}
