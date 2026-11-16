@@ -1,5 +1,5 @@
 {
- "model": null,
+ "model": "gpt-5.4-mini",
  "rows": [
   {
    "id": "T25-01",
@@ -17,7 +17,13 @@
     "4.23": true
    },
    "all_numbers_in_source": true,
-   "any_source_ok": true
+   "any_source_ok": true,
+   "second": {
+    "source_figure": "4.23% year-on-year real GDP growth in Q2 2025",
+    "verdict": "match",
+    "reason": "The source explicitly states that Nigeria\u2019s GDP grew by 4.23% year-on-year in real terms in the second quarter of 2025. This matches the claim exactly.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
   },
   {
    "id": "T25-02",
@@ -35,7 +41,13 @@
     "20.12": true
    },
    "all_numbers_in_source": true,
-   "any_source_ok": true
+   "any_source_ok": true,
+   "second": {
+    "source_figure": "20.12%",
+    "verdict": "match",
+    "reason": "The source states that in August 2025 Nigeria\u2019s headline inflation rate eased to 20.12%. This exactly matches the claim that inflation declined to 20.12% in August 2025.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
   },
   {
    "id": "T25-03",
@@ -53,7 +65,13 @@
     "42.03": true
    },
    "all_numbers_in_source": true,
-   "any_source_ok": true
+   "any_source_ok": true,
+   "second": {
+    "verdict": "match",
+    "source_figure": "$42.03 billion on September 19, 2025; highest since late September 2019",
+    "reason": "The source says Nigeria\u2019s external reserves climbed to $42.03 billion in September 2025 and that this was the highest level since late September 2019. The claim matches the figure and the time frame, with only a slight wording difference between \u201cthis September\u201d and the source\u2019s specific date.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
   },
   {
    "id": "T25-04",
@@ -72,7 +90,13 @@
     "5.17": false
    },
    "all_numbers_in_source": false,
-   "any_source_ok": true
+   "any_source_ok": true,
+   "second": {
+    "verdict": "match",
+    "source_figure": "N7.46 trillion trade surplus in Q2 2025",
+    "reason": "The source says Nigeria recorded a trade surplus of N7.46 trillion in Q2 2025, which matches the claim\u2019s figure. The claim\u2019s 44.3% increase is not directly stated in the source text, but the surplus amount itself is supported.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
   },
   {
    "id": "T25-05",
@@ -100,7 +124,13 @@
     "3.05": true
    },
    "all_numbers_in_source": true,
-   "any_source_ok": true
+   "any_source_ok": true,
+   "second": {
+    "verdict": "mismatch",
+    "source_figure": "Crude oil accounted for 52.60% of total exports, while non-crude oil exports accounted for 47.40% of total exports in Q2 2025.",
+    "reason": "The source gives the relevant Q2 2025 export split as 52.60% crude oil and 47.40% non-crude oil. The claim reverses the proportions and says non-oil exports were 48% versus oil at 52%, which does not match the source.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
   },
   {
    "id": "T25-06",
@@ -118,7 +148,13 @@
     "1.68": true
    },
    "all_numbers_in_source": true,
-   "any_source_ok": true
+   "any_source_ok": true,
+   "second": {
+    "source_figure": "1.68 million barrels per day in Q2 2025",
+    "verdict": "match",
+    "reason": "The source says Nigeria\u2019s average daily oil production was 1.68 mbpd in Q2 2025. That exactly matches the claim that oil production rebounded to 1.68 million barrels per day for Q2 2025.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
   },
   {
    "id": "T25-07",
@@ -138,7 +174,13 @@
     "998,602": true
    },
    "all_numbers_in_source": false,
-   "any_source_ok": true
+   "any_source_ok": true,
+   "second": {
+    "verdict": "match",
+    "source_figure": "1,183,691 barrels per day in May 2023 (about 1.18 million bpd)",
+    "reason": "The source says Nigeria\u2019s oil production increased to 1,183,691 bpd in May 2023, which is essentially 1.18 million bpd. The claim\u2019s \u201cbarely one million in May 2023\u201d is a rounded, hedged description of that figure.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
   },
   {
    "id": "T25-08",
@@ -149,14 +191,20 @@
      "url": "https://breezynewsnigeria.com/?p=130597",
      "ok": true,
      "kind": "html",
-     "chars": 3777
+     "chars": 3901
     }
    ],
    "official_numbers": {
     "510,378": true
    },
    "all_numbers_in_source": true,
-   "any_source_ok": true
+   "any_source_ok": true,
+   "second": {
+    "source_figure": "510,378 students",
+    "verdict": "match",
+    "reason": "The source says NELFund had benefited 510,378 students by 27 September 2025, which is consistent with the claim of approximately 510,000 students. The source does not specify the \u201cacross 36 states and the FCT\u201d part, but the student count itself matches the claim.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
   },
   {
    "id": "T25-09",
@@ -167,14 +215,20 @@
      "url": "https://breezynewsnigeria.com/?p=130597",
      "ok": true,
      "kind": "html",
-     "chars": 3777
+     "chars": 3901
     }
    ],
    "official_numbers": {
     "228": true
    },
    "all_numbers_in_source": true,
-   "any_source_ok": true
+   "any_source_ok": true,
+   "second": {
+    "verdict": "match",
+    "source_figure": "510,378 students; 228 approved tertiary institutions",
+    "reason": "The source says more than 510,000 students have benefited and gives the precise figure as 510,378. It also states that disbursements covered 228 approved tertiary institutions, matching the claim.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
   },
   {
    "id": "T25-10",
@@ -185,14 +239,20 @@
      "url": "https://breezynewsnigeria.com/?p=130597",
      "ok": true,
      "kind": "html",
-     "chars": 3777
+     "chars": 3901
     }
    ],
    "official_numbers": {
     "99.5": true
    },
    "all_numbers_in_source": true,
-   "any_source_ok": true
+   "any_source_ok": true,
+   "second": {
+    "verdict": "match",
+    "source_figure": "N99.5 billion",
+    "reason": "The source says that as of the 27 September 2025 status report, NELFund had disbursed a total of N99.5 billion since the scheme began. That matches the claim\u2019s figure for September 10 in substance, with no material discrepancy in the amount stated.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
   },
   {
    "id": "T25-11",
@@ -203,14 +263,20 @@
      "url": "https://breezynewsnigeria.com/?p=130597",
      "ok": true,
      "kind": "html",
-     "chars": 3777
+     "chars": 3901
     }
    ],
    "official_numbers": {
     "45.7": true
    },
    "all_numbers_in_source": true,
-   "any_source_ok": true
+   "any_source_ok": true,
+   "second": {
+    "verdict": "mismatch",
+    "source_figure": "N45.7 billion",
+    "reason": "The source says NELFund had disbursed N45.7 billion for upkeep allowances as of 27 September 2025. That does not match the claim of N44.7 billion as of 10 September 2025.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
   },
   {
    "id": "T25-12",
@@ -234,7 +300,13 @@
     "13.5": true
    },
    "all_numbers_in_source": true,
-   "any_source_ok": true
+   "any_source_ok": true,
+   "second": {
+    "source_figure": "13.5% in 2024",
+    "verdict": "match",
+    "reason": "The source states that Nigeria\u2019s tax-to-GDP ratio was 13.5% in 2024. The claim\u2019s 13.5% figure is consistent with the source, and the year difference is acceptable given the claim is referring to 2025 context while citing the ratio level.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
   },
   {
    "id": "T25-13",
@@ -252,7 +324,13 @@
     "10.86": true
    },
    "all_numbers_in_source": true,
-   "any_source_ok": true
+   "any_source_ok": true,
+   "second": {
+    "verdict": "mismatch",
+    "source_figure": "10.86% at the end of 2021",
+    "reason": "The source gives Nigeria\u2019s tax-to-GDP ratio at 10.86% for end-2021, which is not less than 10%. The claim\u2019s starting point is therefore inconsistent with the source figure.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
   },
   {
    "id": "TB-01",
@@ -271,7 +349,13 @@
     "3.86": true
    },
    "all_numbers_in_source": true,
-   "any_source_ok": true
+   "any_source_ok": true,
+   "second": {
+    "verdict": "match",
+    "source_figure": "GDP grew by 3.98% year-on-year in real terms in Q3 2025, higher than 3.86% in Q3 2024.",
+    "reason": "The source states exactly that Nigeria\u2019s GDP grew by 3.98% in Q3 2025 and that this was higher than the 3.86% recorded in Q3 2024. The claim matches the source wording and figures.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
   },
   {
    "id": "TB-02",
@@ -289,7 +373,13 @@
     "14.45": true
    },
    "all_numbers_in_source": true,
-   "any_source_ok": true
+   "any_source_ok": true,
+   "second": {
+    "source_figure": "14.45% in November 2025",
+    "verdict": "match",
+    "reason": "The source explicitly says Nigeria\u2019s headline inflation rate eased to 14.45% in November 2025. This directly matches the claim about headline inflation declining to 14.45% in November 2025.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
   },
   {
    "id": "TB-03",
@@ -313,7 +403,13 @@
     "24.23": true
    },
    "all_numbers_in_source": true,
-   "any_source_ok": true
+   "any_source_ok": true,
+   "second": {
+    "source_figure": "24.23%",
+    "verdict": "match",
+    "reason": "The source states that Nigeria\u2019s headline inflation rate in March 2025 was 24.23%. This matches the claim\u2019s March 2025 figure exactly.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
   },
   {
    "id": "TB-04",
@@ -331,7 +427,13 @@
     "46.7": true
    },
    "all_numbers_in_source": true,
-   "any_source_ok": true
+   "any_source_ok": true,
+   "second": {
+    "source_figure": "$46.7 billion",
+    "verdict": "close",
+    "reason": "The source says Nigeria\u2019s foreign reserves were $46.7 billion on November 14, 2025, described as a seven-year high. The claim\u2019s \u201cabout US$47 billion\u201d is a rounding-level difference from the source figure.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
   },
   {
    "id": "TB-05",
@@ -342,14 +444,20 @@
      "url": "https://allafrica.com/stories/202511200364.html",
      "ok": true,
      "kind": "html",
-     "chars": 10576
+     "chars": 10577
     }
    ],
    "official_numbers": {
     "10.3": true
    },
    "all_numbers_in_source": true,
-   "any_source_ok": true
+   "any_source_ok": true,
+   "second": {
+    "verdict": "match",
+    "source_figure": "$46.7 billion in foreign reserves as of November 14, 2025, providing 10.3 months of import cover",
+    "reason": "The source states that Nigeria's foreign reserves were $46.7 billion on November 14, 2025 and that this provided 10.3 months of import cover. The claim's 'about US$47 billion' and 'more than 10 months' both fit the source figures.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
   },
   {
    "id": "TB-06",
@@ -360,14 +468,20 @@
      "url": "https://breezynewsnigeria.com/?p=130597",
      "ok": true,
      "kind": "html",
-     "chars": 3777
+     "chars": 3901
     }
    ],
    "official_numbers": {
     "510,378": true
    },
    "all_numbers_in_source": true,
-   "any_source_ok": true
+   "any_source_ok": true,
+   "second": {
+    "verdict": "mismatch",
+    "source_figure": "510,378 students; 228 approved tertiary institutions",
+    "reason": "The source says NELFund had supported more than 510,000 students and partnered with 228 approved tertiary institutions. That does not match the claim of over 418,000 students and 229 institutions.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
   },
   {
    "id": "TN-01",
@@ -385,7 +499,13 @@
     "14.45": true
    },
    "all_numbers_in_source": true,
-   "any_source_ok": true
+   "any_source_ok": true,
+   "second": {
+    "verdict": "match",
+    "source_figure": "14.45% in November 2025",
+    "reason": "The source says Nigeria\u2019s headline inflation rate fell to 14.45% in November 2025, which is below 15%. That supports the claim that inflation declined steadily and reached below 15 per cent in late 2025.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
   },
   {
    "id": "TN-02",
@@ -396,7 +516,7 @@
      "url": "https://businessday.ng/markets/article/ngx-group-steering-market-to-world-beating-51-19-rally-in-2025/",
      "ok": true,
      "kind": "html",
-     "chars": 7083
+     "chars": 7117
     },
     {
      "url": "https://leadership.ng/?p=516703",
@@ -411,7 +531,13 @@
     "155,613": true
    },
    "all_numbers_in_source": true,
-   "any_source_ok": true
+   "any_source_ok": true,
+   "second": {
+    "source_figure": "48.12 per cent (NGX-All Share Index year-to-date gain as of December 22, 2025)",
+    "verdict": "match",
+    "reason": "The source explicitly says the NGX-All Share Index delivered a year-to-date gain of 48.12 per cent in 2025. That directly supports the claim that the Nigerian stock market posted a 48.12 per cent gain in 2025.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
   },
   {
    "id": "TN-03",
@@ -438,7 +564,13 @@
     "142.67": true
    },
    "all_numbers_in_source": true,
-   "any_source_ok": true
+   "any_source_ok": true,
+   "second": {
+    "verdict": "match",
+    "source_figure": "$720 million in Q3 2025, up from $90 million in Q2 2025",
+    "reason": "The source states that Nigeria\u2019s FDI inflows rose to $720 million in the third quarter of 2025 from $90 million in the preceding quarter. This exactly matches the claim for Q3 2025.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
   },
   {
    "id": "T26-01",
@@ -455,7 +587,7 @@
      "url": "https://nannews.ng/nigerias-gdp-grew-by-3-89-in-q1-2026-nbs/",
      "ok": true,
      "kind": "html",
-     "chars": 7547
+     "chars": 7631
     }
    ],
    "official_numbers": {
@@ -464,7 +596,13 @@
     "4.16": true
    },
    "all_numbers_in_source": true,
-   "any_source_ok": true
+   "any_source_ok": true,
+   "second": {
+    "verdict": "close",
+    "source_figure": "Q2 2026 GDP growth was 4.43% year-on-year; Q1 2026 was 3.89%",
+    "reason": "The source shows Nigeria\u2019s economy grew by 4.43% in Q2 2026, which is over 4%. If the claim is referring to H1 2026 as a whole, the source does not provide a half-year aggregate, but the available quarterly figure is just above 4%.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
   },
   {
    "id": "T26-02",
@@ -488,7 +626,13 @@
     "6.1": true
    },
    "all_numbers_in_source": true,
-   "any_source_ok": true
+   "any_source_ok": true,
+   "second": {
+    "source_figure": "$6.1 billion",
+    "verdict": "match",
+    "reason": "The source says Nigeria\u2019s non-oil export sector reached $6.1 billion in 2025 and that this was the highest value ever recorded for the country\u2019s formal non-oil exports. The claim that it exceeded $6 billion and was the highest in history is supported.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
   },
   {
    "id": "A26-01",
@@ -499,14 +643,20 @@
      "url": "https://nairametrics.com/2026/09/26/nigerias-public-debt-rises-to-n166-79-trillion-in-q2-2026/",
      "ok": true,
      "kind": "html",
-     "chars": 5167
+     "chars": 5169
     }
    ],
    "official_numbers": {
     "166.79": true
    },
    "all_numbers_in_source": true,
-   "any_source_ok": true
+   "any_source_ok": true,
+   "second": {
+    "verdict": "match",
+    "source_figure": "Nigeria\u2019s total public debt stock rose to N166.79 trillion as of June 30, 2026.",
+    "reason": "The source states exactly that Nigeria\u2019s total public debt stood at N166.79 trillion as of June 30, 2026. The claim matches the source figure and date.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
   },
   {
    "id": "A26-02",
@@ -525,7 +675,13 @@
     "118.1": false
    },
    "all_numbers_in_source": false,
-   "any_source_ok": true
+   "any_source_ok": true,
+   "second": {
+    "verdict": "mismatch",
+    "source_figure": "N30,000 / N254.06 per litre = about 118.1 litres",
+    "reason": "The source gives the April 2023 average petrol price as N254.06 per litre. Dividing N30,000 by that price yields about 118 litres, so the claim is consistent with the source.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
   },
   {
    "id": "A26-03",
@@ -552,7 +708,13 @@
     "1,450": true
    },
    "all_numbers_in_source": false,
-   "any_source_ok": true
+   "any_source_ok": true,
+   "second": {
+    "verdict": "not_in_source",
+    "source_figure": "\u20a61,596.25 per litre (May 2026 average petrol price)",
+    "reason": "The sources give petrol prices, but they do not state how many litres a \u20a670,000 minimum wage would buy in October 2026. The claim requires a calculation or an October 2026 price figure that is not provided here.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
   },
   {
    "id": "A26-04",
@@ -577,7 +739,13 @@
     "89.17": true
    },
    "all_numbers_in_source": true,
-   "any_source_ok": true
+   "any_source_ok": true,
+   "second": {
+    "source_figure": "Agric eggs(medium size price of one) was N88.17 in April 2023 (and N89.17 in May 2023).",
+    "verdict": "match",
+    "reason": "The source for April 2023 gives the average price of one medium-sized egg as N88.17, which is essentially N88. The claim is consistent with the April 2023 figure and the stated period.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
   },
   {
    "id": "A26-05",
@@ -603,7 +771,13 @@
     "500": true
    },
    "all_numbers_in_source": true,
-   "any_source_ok": true
+   "any_source_ok": true,
+   "second": {
+    "source_figure": "Bread sliced 500g: N577.41 in April 2023 (national average)",
+    "verdict": "mismatch",
+    "reason": "The source reports the national average price of sliced bread, not a sliced loaf, and it is N577.41 in April 2023. That is materially different from the claim of about N500.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
   },
   {
    "id": "T25-15",
@@ -623,7 +797,13 @@
     "803.8": true
    },
    "all_numbers_in_source": true,
-   "any_source_ok": true
+   "any_source_ok": true,
+   "second": {
+    "source_figure": "Manufactured goods exports rose by 173.0% quarter-on-quarter in Q2 2025.",
+    "verdict": "match",
+    "reason": "The source explicitly says manufactured goods exports had an even stronger quarter-on-quarter growth of 173.0% in Q2 2025. That matches the claim that exports of goods manufactured in Nigeria jumped by 173% for that period.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
   },
   {
    "id": "TB-07",
@@ -639,7 +819,13 @@
    ],
    "official_numbers": {},
    "all_numbers_in_source": false,
-   "any_source_ok": true
+   "any_source_ok": true,
+   "second": {
+    "source_figure": "Nigeria\u2019s inflation rate decreased in November 2025 for the eighth consecutive month, to 14.45 percent.",
+    "verdict": "match",
+    "reason": "The source explicitly says inflation has been slowing since April and that November 2025 was the eighth consecutive monthly drop. That aligns with the claim that inflation has moderated for eight consecutive months over Apr to Nov 2025.",
+    "model": "gpt-5.4-mini-2026-03-17"
+   }
   }
  ]
 }
